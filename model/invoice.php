@@ -1,7 +1,7 @@
 <?php
 namespace Zakaria\COGIP\model;
 
-require_once("model/database.php");
+require_once("model/object/database.php");
 
 class Invoice extends Database{
 
