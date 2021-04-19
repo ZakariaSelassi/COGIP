@@ -5,6 +5,6 @@
     function getContact()
     {
         $contact = new \Loïc\COGIP\model\Contact();
-        $req = $contact>listContact();
+        $req = $contact->listContact();
         require('views/contactView.php');
     }
