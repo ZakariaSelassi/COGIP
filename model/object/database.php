@@ -1,10 +1,10 @@
 <?php 
-namespace Zakaria\COGIP\model;
+namespace Nadja\COGIP\model;
 class Database{
     private $host = "localhost";
     private $username = "root";
-    private $password = "";
-    private $dbname = "open";
+    private $password = "root";
+    private $dbname = "cogipdb";
 
 
     protected function connect()
