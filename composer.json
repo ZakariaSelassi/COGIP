@@ -1,0 +1,15 @@
+{
+    "name": "zsela/cogip",
+    "authors": [{
+        "name": "zakaria",
+        "email": "zakariaselassi@gmail.com"
+    }],
+    "autoload": {
+        "psr-4": {
+            "Router\\": "routes/",
+            "controllers\\": "controllers ",
+            "model\\": "model"
+        }
+    },
+    "require": {}
+}

@@ -1,15 +1,16 @@
 <?php
+    namespace controllers;
     // on charge la classe une seul fois
-    require_once('model/invoice.php');
-    require_once('model/form.php');
+    namespace model;
     function getInvoice()
     {
-        $invoice = new \Zakaria\COGIP\model\Invoice();
+        $invoice = new Invoice();
         $req = $invoice->listInvoice();
         require('views/invoiceView.php');
     }
     function addInvoice($num_invoice,$date_invoice){
-        $create = new \Zakaria\COGIP\model\Invoice();
+        $create = new Invoice();
         $req = $create->createInvoices($num_invoice,$date_invoice);
         require('views/addInvoiceView.php');
+        
     }

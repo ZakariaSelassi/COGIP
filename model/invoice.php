@@ -1,9 +1,7 @@
 <?php
-namespace Zakaria\COGIP\model;
+namespace model;
 
-use PDOException;
-
-require_once("model/database.php");
+//require_once("model/database.php");
 
 class Invoice extends Database{
 
@@ -15,18 +13,12 @@ class Invoice extends Database{
         return $req;
     }
     public function createInvoices($num_invoices,$date_invoice){
-        try{
             $bd = $this->connect();
             $sql = "INSERT INTO invoices (num_invoices,date_invoices) values (:num_invoices,:date_invoices)";
             $stmt = $bd->prepare($sql);
             $stmt -> bindParam(":num_invoices",$num_invoices);
             $stmt -> bindParam(":date_invoice",$date_invoice);
             $req = $stmt->execute();
-    
-        }catch(PDOException $e){
-            echo $e->getMessage();
-            return false;
-        }
         return $req;
     }
 }

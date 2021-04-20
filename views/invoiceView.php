@@ -1,4 +1,3 @@
-
 <?php $title = 'Invoices'; ?>
 <?php ob_start(); ?>
     <div class="m-auto w-50">

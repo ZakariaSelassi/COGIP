@@ -1,5 +1,5 @@
 <?php 
-namespace Zakaria\COGIP\model;
+namespace model;
 class Database{
     private $host = "localhost";
     private $username = "root";
