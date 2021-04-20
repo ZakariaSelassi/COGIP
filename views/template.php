@@ -11,4 +11,3 @@
 </body>
 </html>
 
-//modele faire une function pour afficher la table type company en faisant une requet puis aller sur le controler pour appeler ma methode et dans le controller appeler dans la view

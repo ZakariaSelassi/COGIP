@@ -1,7 +1,7 @@
 <?php
 
 namespace Nadja\COGIP\model;
-require_once("model/database.php");
+require_once("object/database.php");
 
 class Compagnies extends Database{
 
@@ -9,14 +9,14 @@ class Compagnies extends Database{
     public function listClients()
     {
         $bd = $this->connect();
-        $req = $bd->query('SELECT name_company, coutry_company, vat_company FROM Compagnies INNER JOIN type_company ON compagnies.id_type_company = type_company.id_type_company WHERE type_company = "clients" ORDER BY ASC');
+        $req = $bd->query('SELECT name_company, country_company, vat_company FROM compagnies WHERE id_type_company = 1 ORDER BY name_company ASC');
         return $req;
     }
 
     public function listSuppliers()
     {
         $bd = $this->connect();
-        $req = $bd->query('SELECT name_company, coutry_company, vat_company FROM Compagnies INNER JOIN type_company ON compagnies.id_type_company = type_company.id_type_company WHERE type_company = "suppliers" ORDER BY ASC');
+        $req = $bd->query('SELECT name_company, country_company, vat_company FROM compagnies WHERE id_type_company = 2 ORDER BY name_company ASC');
         return $req;
     }
 
@@ -26,5 +26,10 @@ class Compagnies extends Database{
     //     $req = $bd->query('SELECT name_company, country_company, vat_company FROM Compagnies');
     //     return $req;
     // }
+
+    // public function Affichage () 
+    // {
+    //     $bd = $this->connect();
+    //     $req = $bd->query('SELECT type_company FROM ')
 
 }

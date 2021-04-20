@@ -1,15 +1,24 @@
 <?php
-namespace COGIP\controllers\invoiceController;
-require('controllers/invoiceController.php');
+namespace COGIP\controllers\compagniesController;
+require('controllers/compagniesContreller.php');
+
+getClients();
+
+
+
+
+
+
+
 
 // Verifi l'action pour s'avoir qu'elle action appelé 
-if (isset($_GET['action'])) {
-    if ($_GET['action'] == 'getInvoice') {
-        getInvoice();
-    }  else {
-        echo "something went wrong !";
-    } 
+// if (isset($_GET['action'])) {
+//     if ($_GET['action'] == 'getClients') {
+//         ();
+//     }  else {
+//         echo "something went wrong !";
+//     } 
         
-}else{
-    getInvoice();
-}
+// }else{
+//     getCompa();
+// }
