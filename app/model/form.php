@@ -1,5 +1,6 @@
 <?php
-
+namespace App\model;
+use App\model\Invoice;
 class Form {
 
     private $data;

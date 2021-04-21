@@ -1,10 +1,10 @@
 <?php 
-namespace model;
+namespace App\model;
 class Database{
     private $host = "localhost";
     private $username = "root";
     private $password = "";
-    private $dbname = "adriencalkcogip";
+    private $dbname = "adriencalckcogip";
 
 
     protected function connect()

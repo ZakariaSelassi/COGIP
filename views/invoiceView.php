@@ -1,5 +1,5 @@
 <?php $title = 'Invoices'; ?>
-<?php ob_start(); ?>
+
     <div class="m-auto w-50">
     <h1 class="m-auto w-50">Invoices</h1>
     <p>list of invoices :</p>
@@ -13,22 +13,19 @@
         </tr>
     </thead>
     <?php 
-    while($data = $req->fetch())
+    foreach($params['req'] as $req)
     {?>
         <tbody>
             <tr>
-                <td scope="row"><?= htmlspecialchars($data['num_invoices']) ?></td>
-                <td><?= $data['date_invoices'] ?></td>
-                <td><?= $data['name_company'] ?></td>
-                <td><?= $data['type'] ?></td>
+                <td scope="row"><?= htmlspecialchars($req['num_invoices']) ?></td>
+                <td><?= $req['date_invoices'] ?></td>
+                <td><?= $req['name_company'] ?></td>
+                <td><?= $req['type'] ?></td>
             </tr>
         </tbody>
     <?php
     }
-    $req->closeCursor();
     ?>
     </table>
-    <a href="views/addInvoiceView.php">ADD</a>
+    <a href="register">ADD</a>
     </div>
-<?php $content = ob_get_clean(); ?>
-<?php require('template.php');?>  
