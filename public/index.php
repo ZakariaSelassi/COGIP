@@ -5,7 +5,7 @@ require '../vendor/autoload.php';
 //chemin qui pointe vers nos vues , DIR tout seul permet d'appelé le dossier dans le quel on se trouve
 define('VIEWS', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR);
 define('SCRIPTS', dirname($_SERVER['SCRIPT_NAME']) . DIRECTORY_SEPARATOR);
-echo "test ". $_GET['url'];
+
 $router = new Router($_GET['url']);
 // get url 
 
