@@ -1,6 +1,6 @@
 <?php 
-  require_once "model/object//header.php";
-?>
+    require ('../model/object/header.php');
+    ?>
 
 
 <h1>COGIP.app</h1>
@@ -9,7 +9,6 @@
         <p> Espace de connexion </p>
 
         <form action="verification.php" method="POST">
-                    <h1>Connexion</h1>
                     
                     <label><b>Email</b></label>
                     <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" required="required">
@@ -18,7 +17,6 @@
                     <input type="password" placeholder="Entrer le mot de passe" name="password" required="required">
 
                     <input type="submit" id='submit' value='LOGIN' >
-                    
                     
                     <?php
                     if(isset($_GET['erreur'])){
@@ -33,5 +31,5 @@
 
 
 <?php 
-  require_once "model/object/footer.php ";
+  require_once ('../model/object/footer.php');
 ?>
