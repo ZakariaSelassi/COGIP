@@ -27,7 +27,8 @@
 
 ?>
 <div class="m-auto w-50">
-    <p>Clients :</p>
+<h1 class="m-auto w-50">COGIP: Compagnies Directory</h1>
+    <p>Suppliers :</p>
     <table class="table">
     <thead>
         <tr>
@@ -48,9 +49,10 @@
        </tbody>
    <?php
    }
+
    $req->closeCursor();
 ?>
-
+</table>
 
 <?php $content = ob_get_clean(); ?>
 <?php require('template.php'); ?>
