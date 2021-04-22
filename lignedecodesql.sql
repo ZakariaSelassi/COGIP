@@ -1,1 +1,0 @@
-INSERT INTO people (first_name,last_name,id_compagnies,email,telephone) VALUES ("Peter","Gregory",2,"peter.gregory@raviga.com","555-4567");
