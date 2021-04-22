@@ -31,13 +31,21 @@ class Invoice extends Database{
     }
     public function deleteInvoices($id){
     
-            $check = $_POST['invoice'];
+            $id = $_POST['id_invoices'];
             $bd = $this->connect();
-            foreach($check as $invoice){
-                $req = $bd->prepare("DELETE from invoices where id ='$invoice'");
+        
+            $req = $bd->prepare("DELETE from invoices where id =$id");
+            if(!$req)
+            { 
+                echo 'error';
+            }else
+            {   
                 $req->execute();
-            }  
-            var_dump($req);
+                var_dump($req);  
+                echo $req -> rowCount();
+                echo "New clients as been register !";
+            }
+            return  $req;  
     }
     public function createInvoices(){
         if(isset($_POST['submit']))
@@ -74,5 +82,3 @@ class Invoice extends Database{
            
     }
 }
-          /*$company = "SELECT compagnies.name_company FROM invoices inner join compagnies on invoices.id_compagnies = compagnies.id_compagnies inner join type_company on compagnies.id_type_company = type_company.id_type_company";
-            $people = "SELECT people.first_name from invoices inner join people on invoices.id_people = people.id_people"; */

@@ -6,6 +6,7 @@
     <table class="table">
     <thead>
         <tr>
+        <th>number</th>
         <th scope="col">Invoice Number</th>
         <th scope="col">Date</th>
         <th scope="col">Compagnies</th>
@@ -17,11 +18,12 @@
     {?>
         <tbody>
             <tr>
+                <td><?= $req['id_invoices'] ?></td>
                 <td scope="row"><?= htmlspecialchars($req['num_invoices']) ?></td>
                 <td><?= $req['date_invoices'] ?></td>
                 <td><?= $req['name_company'] ?></td>
                 <td><?= $req['type'] ?></td>
-                <td><a href="/delete/<?=$req['id_invoices']?>">Delete</a>
+                <td><button type="submit" name="delete"><a href="/delete/<?=$req['id_invoices']?>">Delete</a></button></td>
             </tr>
         </tbody>
     <?php

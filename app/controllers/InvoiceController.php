@@ -36,14 +36,13 @@ class InvoiceController extends Controller
         }  
     }
     public function delete($id){
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+       
             $invoice = new Invoice();
             $req = $invoice->deleteInvoices($id);
-            var_dump($_POST);
+            var_dump($req);
             if ($req) {
                 return $this->view('deleteInvoiceView',compact('req'));
             }
-        }
     }
 }
     
