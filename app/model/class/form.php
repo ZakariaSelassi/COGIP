@@ -1,0 +1,62 @@
+<?php
+namespace App\model\class;
+use App\model\Invoice;
+class Form {
+
+    private $data;
+
+    public $p = 'p';
+    public $div = 'div';
+
+
+    public function __construct($data = array())
+    {
+        $this -> data = $data;
+    }
+
+    public function surroundP($html){  
+        return "<{$this->p}>{$html}</{$this->p}>";
+    }
+
+    public function surroundDiv($html){
+        return "<{$this->div}>{$html}</{$this->div}>";
+    }
+    public function create($action)
+    {
+        return '<form action="'.$action.'" method="post">';
+    }
+    public function end(){
+        return '</form>';
+    }
+    public function label($for, $text){
+        return "<p><label for='$for'>".$text."</label></p>";
+    }
+
+    public function inputType($type, $name){
+        return "<p><input type='$type' name='$name'></p>";
+    }
+
+    public function radio($name, $value) {
+        return "<input type='radio' name='$name' value='$value'>";
+    }
+
+    public function time($name){
+        return "<input type='time' name='$name' value=''>";
+    }
+    public function select($text,$pull,$name1,$name2){
+        $optionArray= [];
+        
+        foreach($pull as $value){ 
+            array_push(
+            $optionArray,"<option value='".$value[$name1]."'>
+            ".$value[$name2]."</option>");
+        }
+        return "<p>\n<select name='$text'>".implode(",",$optionArray)."</select>\n</p>\n";
+    }
+    public function submit($modifier){
+        return '<div><button type="submit" name="submit" class="btn btn-primary mt-1" >'.$modifier.'</button></div>';
+    }
+}
+
+
+?>
