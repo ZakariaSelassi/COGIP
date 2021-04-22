@@ -3,7 +3,7 @@
 <h1 class="m-auto w-50">Invoices</h1>
 <p>edit invoices :</p>
 <?php 
-$form = new App\model\Form();
+$form = new App\model\classe\Form();
 echo $form->create("/register");
 echo $form->inputType("text","invoice");
 echo $form->inputType("date","date");

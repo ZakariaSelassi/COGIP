@@ -23,7 +23,7 @@
                 <td><?= $req['date_invoices'] ?></td>
                 <td><?= $req['name_company'] ?></td>
                 <td><?= $req['type'] ?></td>
-                <td><button type="submit" name="delete"><a href="/delete/<?=$req['id_invoices']?>">Delete</a></button></td>
+                <td><a href="/deleteInvoice/<?=$req['id_invoices']?>" class="btn btn-danger">Delete</a></td>
             </tr>
         </tbody>
     <?php
