@@ -11,10 +11,7 @@ $router = new Router($_GET['url']);
 
 $router->get('/', 'App\controllers\InvoiceController@getInvoice');
 $router->get('/register', 'App\controllers\InvoiceController@creatInvoice');
-
-    $router->post('/register' ,'App\controllers\InvoiceController@displayInvoice');
-
-
+$router->post('/register' ,'App\controllers\InvoiceController@displayInvoice');
 // Verifi les differents route
 $router->run();
 ?>

@@ -15,12 +15,11 @@ class InvoiceController extends Controller
         
     }
     public function creatInvoice(){
-        $create = new Invoice();
-            $req = $create->createInvoices();
-            
-            return $this->view('addInvoiceView',compact('req'));
-    
-       
+            $create = new Invoice();
+            $req = $create->companyNames();
+            $req2 = $create->createInvoices();
+            $req3 = $create->peopleNames();
+            return $this->view('addInvoiceView',compact('req','req2','req3'));
     }
     public function displayInvoice()
     {

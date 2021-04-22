@@ -8,6 +8,7 @@
         "psr-4": {
             "Router\\": "routes/",
             "App\\": "app/"
+
         }
 
     },
