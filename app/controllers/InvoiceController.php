@@ -11,8 +11,7 @@ class InvoiceController extends Controller
         $invoice = new Invoice();
         $req = $invoice->listInvoice();
         return $this->view('invoiceView',compact('req'));
-        //require('views/invoiceView.php');
-        
+        //require('views/invoiceView.php');    
     }
     public function creatInvoice(){
             $create = new Invoice();
@@ -25,11 +24,26 @@ class InvoiceController extends Controller
     {
         if($_SERVER["REQUEST_METHOD"] == "POST")
         {
-            var_dump($_POST);
             $display = new Invoice();
             $req = $display->createInvoices($_POST);
+            if($req){
+                header('Location: /');
+            }else{
+                echo "Pas bon";
+            }
+            
+
+        }  
+    }
+    public function delete($id){
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $invoice = new Invoice();
+            $req = $invoice->deleteInvoices($id);
+            var_dump($_POST);
+            if ($req) {
+                return $this->view('deleteInvoiceView',compact('req'));
+            }
         }
-       
     }
 }
     

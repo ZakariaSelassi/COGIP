@@ -26,8 +26,18 @@ class Invoice extends Database{
     public function listInvoice()
     {
         $bd = $this->connect();
-        $req = $bd->query('SELECT num_invoices,date_invoices,compagnies.name_company,type_company.type FROM invoices inner join compagnies on invoices.id_compagnies = compagnies.id_compagnies inner join type_company on compagnies.id_type_company = type_company.id_type_company');
+        $req = $bd->query('SELECT id_invoices,num_invoices,date_invoices,compagnies.name_company,type_company.type FROM invoices inner join compagnies on invoices.id_compagnies = compagnies.id_compagnies inner join type_company on compagnies.id_type_company = type_company.id_type_company');
         return $req;
+    }
+    public function deleteInvoices($id){
+    
+            $check = $_POST['invoice'];
+            $bd = $this->connect();
+            foreach($check as $invoice){
+                $req = $bd->prepare("DELETE from invoices where id ='$invoice'");
+                $req->execute();
+            }  
+            var_dump($req);
     }
     public function createInvoices(){
         if(isset($_POST['submit']))
@@ -38,11 +48,8 @@ class Invoice extends Database{
             $compa = $_POST['companies'];
             $peop = $_POST['people'];
             $bd = $this->connect();
-  
-
             $sql = "INSERT INTO invoices (num_invoices,date_invoices,id_compagnies,id_people) values (:num_invoices,:date_invoices,:id_compagnies,:id_people)";
             $stmt = $bd->prepare($sql);
-
             $stmt -> bindParam(":num_invoices",$num_invoices);
             $stmt -> bindParam(":date_invoices",$date_invoices);
             $stmt -> bindParam(":id_compagnies",$compa);
@@ -59,7 +66,7 @@ class Invoice extends Database{
                     'id_compagnies' => $compa,
                     'id_people' => $peop
                 ]);
-                var_dump($stmt);
+                
                 echo $stmt -> rowCount();
                 echo "New clients as been register !";}
                 return  $stmt;  

@@ -21,6 +21,7 @@
                 <td><?= $req['date_invoices'] ?></td>
                 <td><?= $req['name_company'] ?></td>
                 <td><?= $req['type'] ?></td>
+                <td><a href="/delete/<?=$req['id_invoices']?>">Delete</a>
             </tr>
         </tbody>
     <?php
