@@ -1,10 +1,12 @@
 <?php
     // on charge la classe une seul fois
-    require_once('model/invoice.php');
+    require_once('../model/contact.php');
 
-    function getContact()
-    {
-        $contact = new \Loïc\COGIP\model\Contact();
+    function getContact(){
+        $contact = new Contact();
         $req = $contact->listContact();
-        require('views/contactView.php');
+        require('../views/contactView.php');
     }
+
+    getContact();
+
