@@ -2,8 +2,7 @@
 namespace App\model;
 
 use PDO;
-
-//require_once("model/database.php");
+require_once("class/database.php");
 
 class Invoice extends Database{
 
