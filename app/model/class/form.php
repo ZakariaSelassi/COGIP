@@ -29,11 +29,11 @@ class Form {
         return '</form>';
     }
     public function label($for, $text){
-        return "<label for='$for'>".$text."</label>";
+        return "<p><label for='$for'>".$text."</label></p>";
     }
 
     public function inputType($type, $name){
-        return "<p><input type='$type' name='$name'>".$name."</p>";
+        return "<p><input type='$type' name='$name'></p>";
     }
 
     public function radio($name, $value) {
