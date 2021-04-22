@@ -28,22 +28,14 @@ class Invoice extends Database{
         $req = $bd->query('SELECT id_invoices,num_invoices,date_invoices,compagnies.name_company,type_company.type FROM invoices inner join compagnies on invoices.id_compagnies = compagnies.id_compagnies inner join type_company on compagnies.id_type_company = type_company.id_type_company');
         return $req;
     }
-    public function deleteInvoices(int $id){
-           
-            
-                $bd = $this->connect();
-                $req = $bd->prepare("DELETE from invoices where id_invoices = $id");
-                if(!$req)
-                { 
-                    echo 'error';
-                }else
-                {   
-                    $req->execute();
-                    var_dump($req);  
-                    echo $req -> rowCount();
-                    echo "clients as been delete !";
-                }
-                return  $req;
+    public function deleteInvoice(int $id){
+
+            $id = $_GET['id_invoices'];
+            $bd = $this->connect();
+            $req = $bd->prepare("DELETE from invoices where id_invoices = ?"); 
+            $req->execute([$id]);
+            return $req;  
+
     }
     public function createInvoices(){
         if(isset($_POST['submit']))

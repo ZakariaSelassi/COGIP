@@ -35,20 +35,13 @@ class InvoiceController extends Controller
 
         }  
     }
-    public function delete(int $id){
-       
-        var_dump($id);
-        die;
-        $invoice = new Invoice();
-        $req = $invoice->deleteInvoices($id);
-        return $this->view('deleteInvoiceView',compact('req'));
+
+    public function deleteInvoices(int $id){
         
-        /*$invoice = new Invoice();
-            $req = $invoice->deleteInvoices($id);
-            var_dump($req);
-            if ($req) {
-              return header('Location: /');
-            }*/
+        $invoice =new Invoice();
+        $req = $invoice->deleteInvoice($id);
+       return $this->view('invoiceView',compact('req'));
+
     }
 }
     
