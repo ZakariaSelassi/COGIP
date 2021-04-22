@@ -11,7 +11,7 @@
       <br>
         </p>
         <p>
-      <label> Passeword
+      <label> Password
       </label>
       <input id="password" name="password" type="password" required="required"/>
         </p>
