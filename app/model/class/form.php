@@ -1,5 +1,6 @@
 <?php
-
+namespace App\model;
+use App\model\Invoice;
 class Form {
 
     private $data;
@@ -20,7 +21,13 @@ class Form {
     public function surroundDiv($html){
         return "<{$this->div}>{$html}</{$this->div}>";
     }
-
+    public function create($action)
+    {
+        return '<form action="'.$action.'" method="post">';
+    }
+    public function end(){
+        return '</form>';
+    }
     public function label($for, $text){
         return "<label for='$for'>".$text."</label>";
     }
@@ -36,17 +43,20 @@ class Form {
     public function time($name){
         return "<input type='time' name='$name' value=''>";
     }
-
-    public function select($text, $arrayValue=array()){
+    public function select($text,$pull,$name1,$name2){
         $optionArray= [];
-        foreach($arrayValue as $value){ 
-            array_push($optionArray,"<option value='$value'".$value."</option>");
+        
+        foreach($pull as $value){ 
+            array_push(
+            $optionArray,"<option value='".$value[$name1]."'>
+            ".$value[$name2]."</option>");
         }
-        return "<p>\n<select name='$text'>".implode("",$optionArray)."</select>\n</p>\n";
+        return "<p>\n<select name='$text'>".implode(",",$optionArray)."</select>\n</p>\n";
+    }
+    public function submit($modifier){
+        return '<div><button type="submit" name="submit" class="btn btn-primary mt-1" >'.$modifier.'</button></div>';
     }
 }
 
 
 ?>
-
-
