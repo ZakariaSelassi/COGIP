@@ -49,24 +49,29 @@ class Html {
         </br>".implode("",$optionArray)."</tr>\n</table>";
     }
 
-    public function displayTableContactDetailPeople($pull, $class){
+    public function displayContactDetailPeople($pull){
+       
+        $data = $pull->fetch();
+        return "
+        <p>Contact : ".$data['Name']."</p>
+        <p>Company : ".$data['name_company']."</p>
+        <p>Email : ".$data['email']."</p>
+        <p>Phone : ".$data['telephone']."</p>";
+    }
+
+    public function displayContactDetailInvoices($pull, $class){
         $optionArray= [];
         while ($data = $pull->fetch()){ 
             array_push($optionArray,"<tr>
-            <td>".$data['Name']."</td>
-            <td>".$data['telephone']."</td>
-            <td>".$data['email']."</td>
-            <td>".$data['name_company']."</td>
-            <td><a href =".$data['id_people']."\">Supprimer</a></td>
+            <td>".$data['num_invoices']."</td>
+            <td>".$data['date_invoices']."</td>
         </tr>");
         }
         return "
         <table class='$class'>
         <tr>
-            <td>Name</td>
-            <td>Telephone</td>
-            <td>E-mail</td>
-            <td>Company</td>
+            <td>Invoice number</td>
+            <td>Date</td>
         </tr>
         </br>".implode("",$optionArray)."</tr>\n</table>";
     }

@@ -14,7 +14,7 @@
             $contact = new Contact();
             $req = $contact->listContact();
             $req2= $contact->listContactInvoices();
-            return $this->view('contactFormView',compact('req','req2'));
+            return $this->view('contactDetailsView',compact('req','req2'));
         }
 
         public function createContact(){

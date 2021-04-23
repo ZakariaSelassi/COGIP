@@ -14,7 +14,7 @@ class Contact extends Database{
     }
 
 
-    public function listContactDetails(){
+    public function listContactInvoices(){
         $bd = $this->connect();
         $req = $bd->query('SELECT num_invoices, date_invoices FROM invoices INNER JOIN people on invoices.id_people = people.id_people');
         return $req;
