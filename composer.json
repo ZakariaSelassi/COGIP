@@ -1,8 +1,8 @@
 {
-    "name": "zsela/cogip",
+    "name": "calle/cogip",
     "authors": [{
-        "name": "zakaria",
-        "email": "zakariaselassi@gmail.com"
+        "name": "Adrien Callewaert",
+        "email": "callewaert_adrien@live.fr"
     }],
     "autoload": {
         "psr-4": {
