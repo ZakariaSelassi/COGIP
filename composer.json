@@ -1,9 +1,12 @@
 {
-    "name": "zsela/cogip",
-    "authors": [{
-        "name": "zakaria",
-        "email": "zakariaselassi@gmail.com"
-    }],
+    "name": "hexit/cogip",
+    "authors": [
+        {
+            "name": "Hannecart Loïc",
+            "email": "76540590+HanLoi@users.noreply.github.com"
+            
+        }
+    ],
     "autoload": {
         "psr-4": {
             "Router\\": "routes/",
