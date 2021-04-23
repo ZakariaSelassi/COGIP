@@ -23,6 +23,10 @@
                 <td><?= $req['date_invoices'] ?></td>
                 <td><?= $req['name_company'] ?></td>
                 <td><?= $req['type'] ?></td>
+                <td>
+                    <a href="" name="edit" class="btn btn-warning">Edit</a>
+                    <a href="/deleteInvoice/<?= $req['id_invoices']?>" name="delete" class="btn btn-danger">Delete</a>
+               </td>
             </tr>
         </tbody>
     <?php
@@ -31,5 +35,4 @@
     </table>
     <div>
     <a href="/register">ADD</a>
-    <a href="/admin/panels">Panels Admin</a>
     </div>

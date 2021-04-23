@@ -11,7 +11,7 @@ class InvoiceController extends Controller
     public function index(){
         $invoice = new Invoice();
         $req = $invoice->listInvoice();
-        return $this->view('admin.panels',compact('req'));
+        return $this->view('invoiceView',compact('req'));
     }
     public function getInvoice()
     {
@@ -34,22 +34,27 @@ class InvoiceController extends Controller
             $display = new Invoice();
             $req = $display->createInvoices($_POST);
             if($req){
-                header('Location: /admin');
+                header('Location: /index');
             }else{
                 echo "Pas bon";
             }
         }
     }
 
-    public function destroy(int $id_invoices){
+    public function deleteInvoice(int $id){
         
         $invoices = new Invoice();
-        $req = $invoices->destroy($id_invoices);
+        $req = $invoices->listInvoice();
+        $req2 =$invoices->deleteInvoices($id);
+        //return $this->view('invoiceView',compact('req','req2'));
         if($req)
         {
-            return header('Location: /admin/panels');
+           return header('Location: /index');
         }
-
+        else{
+           return header('Location: /index');
+        }
+        //$req2 = $invoices->listInvoice();
     }
 }
     

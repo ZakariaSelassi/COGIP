@@ -28,13 +28,13 @@ class Invoice extends Database{
         $req = $bd->query('SELECT id_invoices,num_invoices,date_invoices,compagnies.name_company,type_company.type FROM invoices inner join compagnies on invoices.id_compagnies = compagnies.id_compagnies inner join type_company on compagnies.id_type_company = type_company.id_type_company');
         return $req;
     }
-    public function destroy(int $id_invoices){
-
-            $bd = $this->connect();
-            $req = $bd->prepare("DELETE from invoices where id_invoices = $id_invoices");
-            $req->execute($id_invoices);
-            return $req;
-       
+    public function deleteInvoices(int $id){
+        $bdd = $this->connect();
+        var_dump($id);
+        $requete = "DELETE FROM `invoices` WHERE id_invoices = :id";
+        $resultat = $bdd->prepare($requete);
+        $resultat->bindParam(':id',$id, PDO::PARAM_INT);
+        return $resultat->execute();
     }
     public function createInvoices(){
         if(isset($_POST['submit']))

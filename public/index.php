@@ -9,12 +9,11 @@ define('SCRIPTS', dirname($_SERVER['SCRIPT_NAME']) . DIRECTORY_SEPARATOR);
 $router = new Router($_GET['url']);
 // get url 
 $router->get('/', 'App\controllers\InvoiceController@home');
-
+$router->get('/index', 'App\controllers\InvoiceController@index');
 $router->get('/register', 'App\controllers\InvoiceController@creatInvoice');
 $router->post('/register', 'App\controllers\InvoiceController@displayInvoice');
-$router->get('/index', 'App\controllers\InvoiceController@getInvoice');
+
 /*********/
-$router->get('/admin/panels', 'App\controllers\InvoiceController@index');
-$router->get('/admin/panels/delete/:id_invoices', 'App\controllers\InvoiceController@destroy');
+$router->get('/deleteInvoice/:id', 'App\controllers\InvoiceController@deleteInvoice');
 $router->run();
 ?>
