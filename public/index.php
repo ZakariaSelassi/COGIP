@@ -9,11 +9,12 @@ define('SCRIPTS', dirname($_SERVER['SCRIPT_NAME']) . DIRECTORY_SEPARATOR);
 $router = new Router($_GET['url']);
 // get url
 
-$router->get('/listcontact', 'App\controllers\ContactController@getContact');
+
 $router->get('/listinvoices', 'App\controllers\InvoiceController@getInvoice');
-$router->get('/delete/:id','App\controllers\InvoiceController@delete');
+$router->get('/listContact', 'App\controllers\ContactController@getContact');
 $router->get('/createContact', 'App\controllers\ContactController@createContact');
-$router->get('/contactDetail', 'App\controllers\ContactController@getContactDetails');
+$router->get('/contactDetail/:id', 'App\controllers\ContactController@getContactDetails');
+$router->get('/contactDelete/:id', 'App\controllers\ContactController@contactDelete');
 // Verifi les differents route
 $router->get('/', 'App\controllers\InvoiceController@home'); 
 $router->get('/', 'App\controllers\InvoiceController@home');

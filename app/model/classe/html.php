@@ -35,7 +35,10 @@ class Html {
             <td>".$data['telephone']."</td>
             <td>".$data['email']."</td>
             <td>".$data['name_company']."</td>
-            <td><a href =".$data['id_people']."\">Supprimer</a></td>
+            <td>
+            <a href =\"/contactDelete/".$data['id_people']."\">Supprimer</a>
+            <a href=\"/contactDetail/".$data['id_people']."\" name=\"details\" class=\"btn btn-warning\">Detail</a>
+            </td>
         </tr>");
         }
         return "

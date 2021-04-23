@@ -7,13 +7,13 @@
         public function getContact(){
             $contact = new Contact();
             $req = $contact->listContact();
-            require('../views/contactView.php');
+            return $this->view('contactView',compact('req'));
         }
 
-        public function getContactDetails(){
+        public function getContactDetails($id){
             $contact = new Contact();
-            $req = $contact->listContact();
-            $req2= $contact->listContactInvoices();
+            $req = $contact->listContactDetail($id);
+            $req2= $contact->listContactInvoices($id);
             return $this->view('contactDetailsView',compact('req','req2'));
         }
 

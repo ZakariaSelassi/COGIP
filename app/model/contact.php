@@ -2,7 +2,8 @@
 namespace App\model;
 
 use PDO;
-require_once("class/database.php");
+
+use App\model\classe\Database;
 class Contact extends Database{
 
 
@@ -13,11 +14,26 @@ class Contact extends Database{
         return $req;
     }
 
-
-    public function listContactInvoices(){
+    public function listContactDetail(int $id)
+    {
         $bd = $this->connect();
-        $req = $bd->query('SELECT num_invoices, date_invoices FROM invoices INNER JOIN people on invoices.id_people = people.id_people');
+        $req = $bd->query("SELECT id_people, CONCAT(first_name,' ',last_name) AS 'Name', telephone, email, compagnies.name_company, compagnies.id_compagnies FROM People INNER JOIN compagnies on people.id_compagnies = compagnies.id_compagnies WHERE id_people = $id " );
         return $req;
+    }
+
+
+    public function listContactInvoices(int $id){
+        $bd = $this->connect();
+        $req =$bd->query("SELECT num_invoices, date_invoices FROM invoices WHERE id_people = $id");
+        return $req;
+    }
+
+    public function contactDelete(){
+        $bdd = $this->connect();
+        $requete = "DELETE FROM `people` WHERE id_people = :id";
+        $resultat = $bdd->prepare($requete);
+        $resultat->bindParam(':id',$id, PDO::PARAM_INT);
+        return $resultat->execute();
     }
 
     public function create(){
