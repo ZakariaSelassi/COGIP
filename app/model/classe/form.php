@@ -1,4 +1,5 @@
 <?php
+namespace App\model\classe;
 use App\model\Invoice;
 class Form {
 

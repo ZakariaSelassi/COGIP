@@ -2,8 +2,8 @@
 namespace App\model;
 
 use PDO;
-require_once("class/database.php");
 
+use App\model\classe\Database;
 class Invoice extends Database{
 
     public function companyNames(){
@@ -28,23 +28,13 @@ class Invoice extends Database{
         $req = $bd->query('SELECT id_invoices,num_invoices,date_invoices,compagnies.name_company,type_company.type FROM invoices inner join compagnies on invoices.id_compagnies = compagnies.id_compagnies inner join type_company on compagnies.id_type_company = type_company.id_type_company');
         return $req;
     }
-    public function deleteInvoices($id){
-    
-            $id = $_POST['id_invoices'];
-            $bd = $this->connect();
-        
-            $req = $bd->prepare("DELETE from invoices where id =$id");
-            if(!$req)
-            { 
-                echo 'error';
-            }else
-            {   
-                $req->execute();
-                var_dump($req);  
-                echo $req -> rowCount();
-                echo "New clients as been register !";
-            }
-            return  $req;  
+    public function deleteInvoices(int $id){
+        $bdd = $this->connect();
+        var_dump($id);
+        $requete = "DELETE FROM `invoices` WHERE id_invoices = :id";
+        $resultat = $bdd->prepare($requete);
+        $resultat->bindParam(':id',$id, PDO::PARAM_INT);
+        return $resultat->execute();
     }
     public function createInvoices(){
         if(isset($_POST['submit']))
