@@ -5,7 +5,9 @@ use App\model\Invoice;
 
 class InvoiceController extends Controller
 {
-    
+    public function index(){
+        return $this->view('homeView');
+    }
     public function getInvoice()
     {
         $invoice = new Invoice();
@@ -27,20 +29,28 @@ class InvoiceController extends Controller
             $display = new Invoice();
             $req = $display->createInvoices($_POST);
             if($req){
-                header('Location: /');
+                header('Location: /admin');
             }else{
                 echo "Pas bon";
             }
-            
-
-        }  
+        }/*elseif($_SERVER["REQUEST_METHOD"] == "POST")
+        {
+            $display = new Invoice();
+            $req = $display->createInvoices($_POST);
+            if($req){
+                header('Location: /admin');
+            }else{
+                echo "Pas bon";
+            }
+        }*/
     }
 
-    public function deleteInvoices(int $id){
-        
+    public function deleteInvoices(){
+        var_dump($_POST);
         $invoice =new Invoice();
-        $req = $invoice->deleteInvoice($id);
-       return $this->view('invoiceView',compact('req'));
+        $req = $invoice->deleteInvoice();
+        var_dump($req);
+        return $this->view('invoiceView',compact('req'));
 
     }
 }

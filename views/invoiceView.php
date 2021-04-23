@@ -25,7 +25,7 @@
                 <td><?= $req['name_company'] ?></td>
                 <td><?= $req['type'] ?></td>
                 <td>
-                    <a href="/deleteInvoice/<?= $req['id_invoices']?>" name="delete" class="btn btn-danger">Delete</a>
+                    <a href="/admin/deleteInvoices/<?= $req['id_invoices'] ?>" name="delete" class="btn btn-danger">Delete</a>
                </td>
             </tr>
         </tbody>
