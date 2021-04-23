@@ -8,13 +8,13 @@ define('SCRIPTS', dirname($_SERVER['SCRIPT_NAME']) . DIRECTORY_SEPARATOR);
 
 $router = new Router($_GET['url']);
 // get url 
-$router->get('/', 'App\controllers\InvoiceController@index');
+$router->get('/', 'App\controllers\InvoiceController@home');
 
 $router->get('/register', 'App\controllers\InvoiceController@creatInvoice');
 $router->post('/register', 'App\controllers\InvoiceController@displayInvoice');
-$router->get('/admin', 'App\controllers\InvoiceController@getInvoice');
-$router->get('/admin/deleteInvoices', 'App\controllers\InvoiceController@deleteInvoices');
-
-// Verifi les differents route
+$router->get('/index', 'App\controllers\InvoiceController@getInvoice');
+/*********/
+$router->get('/admin/panels', 'App\controllers\InvoiceController@index');
+$router->get('/admin/panels/delete/:id_invoices', 'App\controllers\InvoiceController@destroy');
 $router->run();
 ?>

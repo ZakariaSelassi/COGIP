@@ -1,3 +1,3 @@
 <div>
-    <a href="/admin">Admin</a>
+    <a href="/index">Admin</a>
 </div>

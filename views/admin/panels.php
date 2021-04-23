@@ -2,7 +2,7 @@
 
     <div class="m-auto w-50">
     <h1 class="m-auto w-50">Invoices</h1>
-    <p class="m-auto w-50">list of invoices :</p>
+    <p class="m-auto w-50">Panels invoices:</p>
     <table class="table">
     <thead>
         <tr>
@@ -11,6 +11,7 @@
         <th scope="col">Date</th>
         <th scope="col">Compagnies</th>
         <th scope="col">Type</th>
+        <th scope="col">action</th>
         </tr>
     </thead>
     <?php 
@@ -23,13 +24,15 @@
                 <td><?= $req['date_invoices'] ?></td>
                 <td><?= $req['name_company'] ?></td>
                 <td><?= $req['type'] ?></td>
+                <td>
+                    <a href="" name="edit" class="btn btn-warning">Edit</a>
+                    <a href="/admin/panels/delete/<?= $req['id_invoices']?>" name="delete" class="btn btn-danger">Delete</a>
+               </td>
             </tr>
         </tbody>
     <?php
     }
     ?>
     </table>
-    <div>
     <a href="/register">ADD</a>
-    <a href="/admin/panels">Panels Admin</a>
     </div>

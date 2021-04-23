@@ -5,8 +5,13 @@ use App\model\Invoice;
 
 class InvoiceController extends Controller
 {
-    public function index(){
+    public function home(){
         return $this->view('homeView');
+    }
+    public function index(){
+        $invoice = new Invoice();
+        $req = $invoice->listInvoice();
+        return $this->view('admin.panels',compact('req'));
     }
     public function getInvoice()
     {
@@ -33,24 +38,17 @@ class InvoiceController extends Controller
             }else{
                 echo "Pas bon";
             }
-        }/*elseif($_SERVER["REQUEST_METHOD"] == "POST")
-        {
-            $display = new Invoice();
-            $req = $display->createInvoices($_POST);
-            if($req){
-                header('Location: /admin');
-            }else{
-                echo "Pas bon";
-            }
-        }*/
+        }
     }
 
-    public function deleteInvoices(){
-        var_dump($_POST);
-        $invoice =new Invoice();
-        $req = $invoice->deleteInvoice();
-        var_dump($req);
-        return $this->view('invoiceView',compact('req'));
+    public function destroy(int $id_invoices){
+        
+        $invoices = new Invoice();
+        $req = $invoices->destroy($id_invoices);
+        if($req)
+        {
+            return header('Location: /admin/panels');
+        }
 
     }
 }
