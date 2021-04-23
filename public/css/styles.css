@@ -12,7 +12,7 @@
     border: 2px solid gainsboro;
     background-image: linear-gradient( white, rgb( 250, 250, 250));
     font-family: "Viga", sans-serif;
-    box-shadow: 0 4px 14px rgba( 10, 100, 250, 0.2);
+    box-shadow: 0 4px 14px #070727;
 }
 
 .login-card .btn {
@@ -48,4 +48,64 @@
 .login-card input:focus {
     transition: all 0.2s ease;
     transform: scale(1, 1);
+}
+
+
+/*---------------------------------------------------------------------------- */
+
+body {
+    background-color: darkblue;
+}
+
+a {
+    color: #fff !important;
+}
+
+.nav-item {
+    font-family: "Viga", sans-serif;
+    margin: 0 auto;
+    padding: 5em 3em;
+    text-align: center;
+}
+
+.nav-item a {
+    color: #FFF;
+    text-decoration: none;
+    font: 20px "Viga", sans-serif;
+    margin: 0px 10px;
+    padding: 10px 10px;
+    position: relative;
+    z-index: 0;
+}
+
+
+/* Top & Bottom Borders Out */
+
+.topBotomBordersOut a:before,
+.topBotomBordersOut a:after {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: #FFF;
+    content: "";
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.topBotomBordersOut a:before {
+    top: 0px;
+    transform: translateY(10px);
+}
+
+.topBotomBordersOut a:after {
+    bottom: 0px;
+    transform: translateY(-10px);
+}
+
+.topBotomBordersOut a:hover:before,
+.topBotomBordersOut a:hover:after {
+    opacity: 1;
+    transform: translateY(0px);
 }

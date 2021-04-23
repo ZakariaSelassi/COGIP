@@ -1,6 +1,7 @@
 
-  <?php $tittle = 'login'; ?>
+  <?php $title = 'login'; ?>
   <?php ob_start(); ?>
+    
 
   <div class="container" style="margin-top: 50px">
     <div class="row">
@@ -26,6 +27,8 @@
       <div class="col-md-3"></div>
     </div>
   </div>
+
   <?php $content = ob_get_clean(); ?>
 
   <?php require('template.php');?> 
+
