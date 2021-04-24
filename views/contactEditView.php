@@ -5,23 +5,20 @@
 
 <?php $title = 'create Contact'; ?>
 <h1 class="m-auto w-50">Contact</h1>
-<p>Add contact :</p>
+<p>Edit contact :</p>
 
 <?php
    
     $form = new App\model\classe\Form();
     echo $form->create("html/COGIP/createContact");
     echo $form->label("firstName","First name : ");
-    echo $form->inputType("text","firstName","ex : Bill");
+    echo $form->inputType("text","firstName",$params['data']["first_name"]);
     echo $form->label("lastName","Last name : ");
-    echo $form->inputType("text","lastName","ex : Gate");
+    echo $form->inputType("text","lastName",$params['data']["last_name"]);
     echo $form->label("telephone","Phone number : ");
-    echo $form->inputType("text","telephone","ex : 0498 12 34 56");
+    echo $form->inputType("text","telephone",$params['data']["telephone"]);
     echo $form->label("email","E-mail : ");
-    echo $form->inputType("text","email","ex : billgate@outlook.com");
-    echo $form->select("companies", $params['req'],"id_compagnies","name_company");
-    echo $form->submit("Add");
+    echo $form->inputType("text","email",$params['data']["email"]);
+    echo $form->submit("Edit");
     echo $form->end();
 ?>
-
-

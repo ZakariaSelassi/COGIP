@@ -21,14 +21,21 @@ class Contact extends Database{
         return $req;
     }
 
+    public function listContactDetailEdit(int $id)
+    {
+        $bd = $this->connect();
+        $req = $bd->query("SELECT id_people,first_name,last_name, telephone, email, compagnies.name_company, compagnies.id_compagnies FROM People INNER JOIN compagnies on people.id_compagnies = compagnies.id_compagnies WHERE id_people = $id " );
+        return $req;
+    }
 
-    public function listContactInvoices(int $id){
+
+    public function listContactDetailInvoices(int $id){
         $bd = $this->connect();
         $req =$bd->query("SELECT num_invoices, date_invoices FROM invoices WHERE id_people = $id");
         return $req;
     }
 
-    public function contactDelete(){
+    public function deleteContact(){
         $bdd = $this->connect();
         $requete = "DELETE FROM `people` WHERE id_people = :id";
         $resultat = $bdd->prepare($requete);
@@ -72,6 +79,43 @@ class Contact extends Database{
                 return  $stmt;  
         }
            
+    }
+
+    public function editContact(int $id){
+        if(isset($_POST['submit'])){
+            $bd = $this->connect();
+            $first_name = $_POST['firstName'];
+            $last_name= $_POST['lastName'];
+            $telephone = $_POST['telephone'];
+            $email = $_POST['email'];
+            $company = $_POST['company'];
+            $sql = "UPDATE people SET 'first_name' = :first_name, 'last_name' = :last_name, 'telephone' = :telephone, 'email' = :email, company = :company WHERE id_people = $id";
+            $stmt = $bd->prepare($sql);
+            $stmt -> bindParam(":first_name",$first_name);
+            $stmt -> bindParam(":last_name",$last_name);
+            $stmt -> bindParam(":telephone",$telephone);
+            $stmt -> bindParam(":email",$email);
+            $stmt -> bindParam(":id_compagnies",$company);
+            
+            if(!$stmt)
+            { 
+                echo 'error';
+            }else
+            {   
+                $stmt->execute([
+                    'first_name' => $first_name,
+                    'last_name' => $last_name,
+                    'telephone' => $telephone,
+                    'email' => $email,
+                    'id_compagnies' => $company
+                ]);
+                
+                echo $stmt -> rowCount();
+                echo "New clients as been register !";
+            }
+                return  $stmt;  
+        }
+       
     }
 }
 

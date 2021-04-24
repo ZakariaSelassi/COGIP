@@ -15,6 +15,7 @@ $router->get('/listContact', 'App\controllers\ContactController@getContact');
 $router->get('/createContact', 'App\controllers\ContactController@createContact');
 $router->get('/contactDetail/:id', 'App\controllers\ContactController@getContactDetails');
 $router->get('/contactDelete/:id', 'App\controllers\ContactController@contactDelete');
+$router->get('/contactEdit/:id', 'App\controllers\ContactController@editContact');
 // Verifi les differents route
 $router->get('/', 'App\controllers\InvoiceController@home'); 
 $router->get('/', 'App\controllers\InvoiceController@home');
