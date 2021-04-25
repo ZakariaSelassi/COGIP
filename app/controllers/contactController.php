@@ -46,9 +46,5 @@
             }
 
         }
-
-        /*public function deleteContact(){
-
-        }*/
 }
 

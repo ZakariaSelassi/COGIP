@@ -5,56 +5,56 @@ use App\model\Invoice;
 
 class InvoiceController extends Controller
 {
-    public function home(){
-        return $this->view('homeView');
-    }
-    public function index(){
-        $invoice = new Invoice();
-        $req = $invoice->listInvoice();
-        return $this->view('invoiceView',compact('req'));
-    }
-    public function getInvoice()
+    //recupere data pour admin {
+    public function adminDetails()
     {
         $invoice = new Invoice();
-        $req = $invoice->listInvoice();
-        return $this->view('invoiceView',compact('req'));
-        //require('views/invoiceView.php');    
+        $req = $invoice->lastInvoice();
+        $req2 = $invoice->lastCompanies();
+        return $this->view('admin', compact('req', 'req2'));
     }
-    public function creatInvoice(){
-            $create = new Invoice();
-            $req = $create->companyNames();
-            $req2 = $create->createInvoices();
-            $req3 = $create->peopleNames();
-            return $this->view('addInvoiceView',compact('req','req2','req3'));
-    }
-    public function displayInvoice()
+    // Recupere tout les data pour home
+    public function allDetails()
     {
-        if($_SERVER["REQUEST_METHOD"] == "POST")
-        {
+        $invoice = new Invoice();
+        $req = $invoice->lastCompanies();
+        $req2 = $invoice->lastInvoice();
+        return $this->view('home', compact('req', 'req2'));
+    }
+    // Affiche toutes les factures sur invoices
+    public function allInvoice()
+    {
+        $invoice = new Invoice();
+        $req = $invoice->allInvoice();
+        return $this->view('Invoices.invoices', compact('req'));
+    }
+
+    public function companyNames()
+    {
+        $invoice = new Invoice();
+        $req = $invoice->companyNames();
+        $req2 = $invoice->peopleNames();
+        return $this->view('Invoices.detailsInvoice', compact('req', 'req2'));
+    }
+    // Ajoute nouvelle facture
+    public function creatInvoice()
+    {
+        $create = new Invoice();
+        $req = $create->companyNames();
+        $req2 = $create->createInvoices();
+        $req3 = $create->peopleNames();
+        return $this->view('Invoices.Invoiceform', compact('req', 'req2', 'req3'));
+    }
+    public function sendSubmit()
+    {
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $display = new Invoice();
             $req = $display->createInvoices($_POST);
-            if($req){
-                header('Location: /index');
-            }else{
+            if ($req) {
+                header('Location: /home/admin');
+            } else {
                 echo "Pas bon";
             }
         }
     }
-
-    public function deleteInvoice(int $id){
-        
-        $invoices = new Invoice();
-        $req = $invoices->listInvoice();
-        $req2 =$invoices->deleteInvoices($id);
-        //return $this->view('invoiceView',compact('req','req2'));
-        if($req)
-        {
-           return header('Location: /index');
-        }
-        else{
-           return header('Location: /index');
-        }
-        //$req2 = $invoices->listInvoice();
-    }
 }
-    

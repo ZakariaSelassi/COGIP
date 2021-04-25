@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "name": "hexit/cogip",
     "authors": [
         {
@@ -7,10 +8,17 @@
             
         }
     ],
+=======
+    "name": "zsela/cogipbis",
+    "authors": [{
+        "name": "zakaria",
+        "email": "zakariaselassi@gmail.com"
+    }],
+>>>>>>> zakaria
     "autoload": {
         "psr-4": {
             "Router\\": "routes/",
-            "App\\": "app/"
+            "App\\": "App/"
 
         }
 

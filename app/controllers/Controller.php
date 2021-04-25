@@ -15,5 +15,6 @@ class Controller{
         $content = ob_get_clean();
         require VIEWS . 'template.php';
     }
+    
 }
 ?>

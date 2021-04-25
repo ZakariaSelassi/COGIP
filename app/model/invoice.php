@@ -6,33 +6,36 @@ use PDO;
 use App\model\classe\Database;
 class Invoice extends Database{
 
+    public function lastCompanies()
+    {
+        $bd = $this->connect();
+        $req = $bd->query('SELECT id_compagnies,name_company,country_company,vat_company,type_company.type FROM compagnies inner join type_company on compagnies.id_type_company = type_company.id_type_company LIMIT 0,5');
+        return $req;
+    }
     public function companyNames(){
         $bd = $this->connect();
-        $req = $bd->prepare('SELECT compagnies.id_compagnies,compagnies.name_company FROM invoices inner join compagnies on invoices.id_compagnies = compagnies.id_compagnies inner join type_company on compagnies.id_type_company = type_company.id_type_company');
+        $req = $bd->prepare('SELECT id_compagnies,name_company,country_company,vat_company,type_company.type FROM compagnies inner join type_company on compagnies.id_type_company = type_company.id_type_company LIMIT 0,5');
         $req->execute();
         $resultat = $req->fetchAll();
         return $resultat;
     }
     public function peopleNames(){
         $bd = $this->connect();
-        $req = $bd->prepare('SELECT people.first_name , people.id_people from invoices inner join people on invoices.id_people = people.id_people');
+        $req = $bd->prepare('SELECT id_people,first_name,email,telephone from people');
         $req->execute();
         $resultat = $req->fetchAll();
         return $resultat;
     }
-    public function listInvoice()
+    public function lastInvoice()
     {
+        $bd = $this->connect();
+        $req = $bd->query('SELECT id_invoices,num_invoices,date_invoices,compagnies.name_company,type_company.type FROM invoices inner join compagnies on invoices.id_compagnies = compagnies.id_compagnies inner join type_company on compagnies.id_type_company = type_company.id_type_company LIMIT 0,5');
+        return $req;
+    }
+    public function allInvoice(){
         $bd = $this->connect();
         $req = $bd->query('SELECT id_invoices,num_invoices,date_invoices,compagnies.name_company,type_company.type FROM invoices inner join compagnies on invoices.id_compagnies = compagnies.id_compagnies inner join type_company on compagnies.id_type_company = type_company.id_type_company');
         return $req;
-    }
-    public function deleteInvoices(int $id){
-        $bdd = $this->connect();
-        var_dump($id);
-        $requete = "DELETE FROM `invoices` WHERE id_invoices = :id";
-        $resultat = $bdd->prepare($requete);
-        $resultat->bindParam(':id',$id, PDO::PARAM_INT);
-        return $resultat->execute();
     }
     public function createInvoices(){
         if(isset($_POST['submit']))
@@ -63,7 +66,7 @@ class Invoice extends Database{
                 ]);
                 
                 echo $stmt -> rowCount();
-                echo "New clients as been register !";}
+                echo "New invoices as been register !";}
                 return  $stmt;  
         }
            
