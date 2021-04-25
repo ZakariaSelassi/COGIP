@@ -1,5 +1,5 @@
 {
-    "name": "zsela/cogip",
+    "name": "zsela/cogipbis",
     "authors": [{
         "name": "zakaria",
         "email": "zakariaselassi@gmail.com"
@@ -7,7 +7,7 @@
     "autoload": {
         "psr-4": {
             "Router\\": "routes/",
-            "App\\": "app/"
+            "App\\": "App/"
 
         }
 
