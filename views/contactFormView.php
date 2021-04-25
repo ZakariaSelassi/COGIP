@@ -1,16 +1,12 @@
-<?= 
-    require ('../app/model/classe/html.php');
-    require ('../app/model/classe/form.php');
-?>
 
-<?php $title = 'create Contact'; ?>
+<?php $title = 'contactCreate'; ?>
 <h1 class="m-auto w-50">Contact</h1>
 <p>Add contact :</p>
 
 <?php
    
     $form = new App\model\classe\Form();
-    echo $form->create("html/COGIP/createContact");
+    echo $form->create("/html/COGIP/contactCreate");
     echo $form->label("firstName","First name : ");
     echo $form->inputType("text","firstName","ex : Bill");
     echo $form->label("lastName","Last name : ");
