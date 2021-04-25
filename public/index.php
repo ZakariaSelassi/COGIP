@@ -14,15 +14,17 @@ $router->get('/home/admin',  'App\Controllers\InvoiceController@adminDetails');
 $router->get('/home/admin/newInvoices', 'App\Controllers\InvoiceController@creatInvoice');
 $router->post('/home/admin/newInvoices', 'App\Controllers\InvoiceController@sendSubmit');
 /** Contact */
-$router->get('/listContact', 'App\controllers\ContactController@getContact');
-$router->get('/contactCreate', 'App\controllers\ContactController@createContact');
-$router->get('/contactDetail/:id', 'App\controllers\ContactController@getContactDetails');
-$router->get('/contactDelete/:id', 'App\controllers\ContactController@contactDelete');
-$router->get('/contactEdit/:id', 'App\controllers\ContactController@editContact');
+$router->get('/home/listContact', 'App\controllers\ContactController@getContact');
+$router->get('/home/newContact', 'App\controllers\ContactController@createContact');
+$router->post('/home/newContact', 'App\controllers\ContactController@sendSubmitAdd');
+$router->get('/home/contactDetail/:id', 'App\controllers\ContactController@getContactDetails');
+$router->get('/home/contactDelete/:id', 'App\controllers\ContactController@contactDelete');
+$router->get('/home/contactEdit/:id', 'App\controllers\ContactController@editContact');
+$router->post('/home/contactEdit/:id', 'App\controllers\ContactController@sendSubmitEdit');
 /****Line en dessous a modifier pour ajouter contact personne + companies */
 $router->get('/home/invoices/details/', 'App\Controllers\InvoiceController@companyNames');
 
-/** Companies */
+/** Companies */    
 $router->get('/home/companies',  'App\Controllers\CompaniesController@allCompanies');
 $router->get('/home/admin',  'App\Controllers\CompaniesController@adminDetails');
 $router->get('/home/admin/newCompanies', 'App\Controllers\CompaniesController@creatCompanies');

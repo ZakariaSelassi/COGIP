@@ -35,15 +35,9 @@ class ComposerStaticInit4ae587619b9faaafdf5957b0556785fc
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-<<<<<<< HEAD
-            $loader->prefixLengthsPsr4 = ComposerStaticInitbd7039709e14f85a2a94080fce5a3c01::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitbd7039709e14f85a2a94080fce5a3c01::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitbd7039709e14f85a2a94080fce5a3c01::$classMap;
-=======
             $loader->prefixLengthsPsr4 = ComposerStaticInit4ae587619b9faaafdf5957b0556785fc::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit4ae587619b9faaafdf5957b0556785fc::$prefixDirsPsr4;
             $loader->classMap = ComposerStaticInit4ae587619b9faaafdf5957b0556785fc::$classMap;
->>>>>>> zakaria
 
         }, null, ClassLoader::class);
     }

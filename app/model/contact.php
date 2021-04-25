@@ -50,14 +50,15 @@ class Contact extends Database{
             $last_name= $_POST['lastName'];
             $telephone = $_POST['telephone'];
             $email = $_POST['email'];
-            $company = $_POST['company'];
+            $company = $_POST['companies'];
+            var_dump($company);
             $bd = $this->connect();
             $sql = "INSERT INTO people (first_name,last_name,email,telephone,id_compagnies) values (:first_name,:last_name,:email,:telehpone,:id_compagnies)";
             $stmt = $bd->prepare($sql);
             $stmt -> bindParam(":first_name",$first_name);
             $stmt -> bindParam(":last_name",$last_name);
-            $stmt -> bindParam(":telephone",$telephone);
             $stmt -> bindParam(":email",$email);
+            $stmt -> bindParam(":telephone",$telephone);
             $stmt -> bindParam(":id_compagnies",$company);
           
             if(!$stmt)
@@ -81,7 +82,8 @@ class Contact extends Database{
            
     }
 
-    public function editContact(int $id){
+
+    public function editContact(){
         if(isset($_POST['submit'])){
             $bd = $this->connect();
             $first_name = $_POST['firstName'];
@@ -89,13 +91,15 @@ class Contact extends Database{
             $telephone = $_POST['telephone'];
             $email = $_POST['email'];
             $company = $_POST['company'];
-            $sql = "UPDATE people SET 'first_name' = :first_name, 'last_name' = :last_name, 'telephone' = :telephone, 'email' = :email, company = :company WHERE id_people = $id";
+            $id = $_POST['id'];
+            $sql = "UPDATE people SET 'first_name' = :first_name, 'last_name' = :last_name, 'telephone' = :telephone, 'email' = :email, company = :company WHERE 'id_people' = :id";
             $stmt = $bd->prepare($sql);
             $stmt -> bindParam(":first_name",$first_name);
             $stmt -> bindParam(":last_name",$last_name);
             $stmt -> bindParam(":telephone",$telephone);
             $stmt -> bindParam(":email",$email);
             $stmt -> bindParam(":id_compagnies",$company);
+            $stmt -> bindParam(":id",$id);
             
             if(!$stmt)
             { 
@@ -107,7 +111,8 @@ class Contact extends Database{
                     'last_name' => $last_name,
                     'telephone' => $telephone,
                     'email' => $email,
-                    'id_compagnies' => $company
+                    'id_compagnies' => $company,
+                    'id' => $id
                 ]);
                 
                 echo $stmt -> rowCount();

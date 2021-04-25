@@ -10,7 +10,9 @@
 <?php
    
     $form = new App\model\classe\Form();
-    echo $form->create("html/COGIP/createContact");
+    echo $form->create("/home/listContact");
+    echo $form->label("idPeople","Id Contact : ");
+    echo $form->inputType("text","idPeople",$params['data']["id_people"]);
     echo $form->label("firstName","First name : ");
     echo $form->inputType("text","firstName",$params['data']["first_name"]);
     echo $form->label("lastName","Last name : ");
@@ -19,7 +21,6 @@
     echo $form->inputType("text","telephone",$params['data']["telephone"]);
     echo $form->label("email","E-mail : ");
     echo $form->inputType("text","email",$params['data']["email"]);
-    echo $form->inputType("text","telephone",$params['data']["name_company"]);;
     echo $form->submit("Edit");
     echo $form->end();
 ?>
