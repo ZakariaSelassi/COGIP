@@ -19,6 +19,7 @@
     echo $form->inputType("text","telephone",$params['data']["telephone"]);
     echo $form->label("email","E-mail : ");
     echo $form->inputType("text","email",$params['data']["email"]);
+    echo $form->inputType("text","telephone",$params['data']["name_company"]);;
     echo $form->submit("Edit");
     echo $form->end();
 ?>
