@@ -1,30 +1,39 @@
 <?php 
 namespace Router;
 
-class Router{
+use function PHPSTORM_META\map;
+
+class Router
+{
     public $url;
-    public $routes = [];
+    public $routes = []; // pour stocker toutes les routes
 
     public function __construct($url)
     {
-        $this->url = trim($url,'/');
+        $this->url = trim($url, '/');
     }
-    public function get(string $path , string $action)
+
+
+
+    public function get(string $path, string $action)
     {
-        $this->routes['GET'][] = new Route($path,$action);
+        $this->routes['GET'][] = new Route($path, $action);
     }
-    public function post(string $path , string $action)
+
+    public function post(string $path, string $action)
     {
-        $this->routes['POST'][] = new Route($path,$action);
+        $this->routes['POST'][] = new Route($path, $action);
     }
+
     public function run()
     {
-        foreach($this->routes[$_SERVER['REQUEST_METHOD']] as $route)
-        {
-            if($route->matches($this->url)){
+        // on peut savoir comme ca dynamiquement si c est en post ou get
+        foreach ($this->routes[$_SERVER['REQUEST_METHOD']] as $route) {
+            if ($route->matches($this->url)) {
                 return $route->execute();
-            };
+            }
         }
-        return header('HTTP/1. 404 not found');
+
+        echo '404';
     }
 }

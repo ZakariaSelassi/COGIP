@@ -1,6 +1,9 @@
 <?php 
-namespace App\model;
-class Database{
+namespace App\model\classe;
+
+use App\model\Invoice;
+
+class Database {
     private $host = "localhost";
     private $username = "root";
     private $password = "";
