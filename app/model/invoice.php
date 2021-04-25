@@ -11,7 +11,6 @@ class Invoice extends Database{
         $req = $bd->prepare('SELECT compagnies.id_compagnies,compagnies.name_company FROM invoices inner join compagnies on invoices.id_compagnies = compagnies.id_compagnies inner join type_company on compagnies.id_type_company = type_company.id_type_company');
         $req->execute();
         $resultat = $req->fetchAll();
-        var_dump($resultat);
         return $resultat;
     }
     public function peopleNames(){
@@ -19,7 +18,6 @@ class Invoice extends Database{
         $req = $bd->prepare('SELECT people.first_name , people.id_people from invoices inner join people on invoices.id_people = people.id_people');
         $req->execute();
         $resultat = $req->fetchAll();
-        var_dump($resultat);
         return $resultat;
     }
     public function listInvoice()

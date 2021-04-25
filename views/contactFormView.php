@@ -6,7 +6,7 @@
 <?php
    
     $form = new App\model\classe\Form();
-    echo $form->create("/html/COGIP/contactCreate");
+    echo $form->create("");
     echo $form->label("firstName","First name : ");
     echo $form->inputType("text","firstName","ex : Bill");
     echo $form->label("lastName","Last name : ");
