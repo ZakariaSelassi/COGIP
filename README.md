@@ -43,7 +43,7 @@ NOTE: Don't forget to add an SQL file containing the structure in the repository
 
 ### Data needed by Jean-Christian
 
-####Tables
+#### Tables
 
 Some information must be into the database an *it is not negotiable*: the data relating to people, companies and invoices. All this divided into four tables.
 
@@ -55,9 +55,9 @@ For the people, we will need:
 - For companies, we will need:
 
 Name of the company
-Its country
-VAT number
-For invoices, we will need:
+- Its country
+- VAT number
+- For invoices, we will need:
 
 Number of the invoice
 Date of the invoice
