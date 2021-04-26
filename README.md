@@ -1,6 +1,8 @@
 # 🔑🔑🔑 PHP Challenge 🔑🔑🔑
- Done on : 27th April 2021
- Team challenge for: Becode
+ - Done on : 27th April 2021
+ - Team challenge for: Becode
+ 
+ # Projet's name: COGIP
  
 ![Gif](https://media.giphy.com/media/Y4ak9Ki2GZCbJxAnJD/giphy.gif)
 
@@ -9,8 +11,6 @@
 * 💻<a href="https://github.com/Nadja-BeCode">Nadja</a>
 * 💻<a href="https://github.com/ZakariaSelassi">Zakaria</a>
 * 💻<a href="https://github.com/AdrienCallewaert">Adrien</a>
-
-# Projet's name: COGIP
 
 # Objectives :
 ### We will evaluate your project based on:
