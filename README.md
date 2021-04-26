@@ -26,7 +26,7 @@
 * Allow access to certain page in regards to permissions
 
 # Mission:
-The COGIP is a company which we don't know an all lot about apart that they produce <a href="https://www.dailymotion.com/video/x3a51">Jean-Michel toys</a> and that they are serious workers check. They also have incredible employees within their rank.
+The COGIP is a company which we don't know an all lot about apart that they produce <a href="https://www.dailymotion.com/video/x3a51">Jean-Michel toys</a> and that they are serious workers <a href ="https://www.dailymotion.com/video/x68i87">check</a>. They also have incredible <a href ="https://www.dailymotion.com/video/xabck6">employees</a> within their rank.
 
 Jean-Christian Ranu works in accounting at the COGIP. He has been using an old, ugly and incomplete software for years, making him go between it and excels sheet. Jean-Christian like paella, crosswords and his coworker Muriel Perrache.
 
@@ -34,22 +34,25 @@ We propose that you code a web application which will respond to the needs and d
 
 NOTE: Don't forget to add an SQL file containing the structure in the repository, as well as, an entry within the README detailing what each person did.
 
-Tips
-Think about your strategy! What are you going to start with? The database? The SQL request? The connexion to the database? The design? You should all agree on the procedure.
-You should all do some CRUD, you're 3 and there is 3 types of documents to process (invoice, companies, people), just saying.
-You should all read the briefing, there are certainly informations you won't have picked on your own and if it's still unclear, ask the client (coaches). Understanding the vision of the client is also a big part of development.
-Communication is important! Between the members of the group, with the client and even with other member of your startup.
-Instructions
-Data needed by Jean-Christian
-Tables
-Some information must be into the database an it is not negotiable: the data relating to people, companies and invoices. All this divided into four tables.
+## Tips
+* Think about your strategy! What are you going to start with? The database? The SQL request? The connexion to the database? The design? You should all agree on the procedure.
+* You should all do some CRUD, you're 3 and there is 3 types of documents to process (invoice, companies, people), just saying.
+* You should all read the briefing, there are certainly informations you won't have picked on your own and if it's still unclear, ask the client (coaches). Understanding the vision of the client is also a big part of development.
+* Communication is important! Between the members of the group, with the client and even with other member of your startup.
+## Instructions
+
+### Data needed by Jean-Christian
+
+####Tables
+
+Some information must be into the database an *it is not negotiable*: the data relating to people, companies and invoices. All this divided into four tables.
 
 For the people, we will need:
 
-Their first name
-Their last name
-Their email
-For companies, we will need:
+- Their first name
+- Their last name
+- Their email
+- For companies, we will need:
 
 Name of the company
 Its country
