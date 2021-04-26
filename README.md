@@ -184,4 +184,4 @@ NOTE: It is imperative however that the slogan of the COGIP (vive la COGIP!) be 
 * <a href="https://www.ovh.com/be">OVH</a>
 
 
-![Image text](http://url/to/cogipTable.jpg)
+![alt text](http://url/to/cogipTable.jpg)
