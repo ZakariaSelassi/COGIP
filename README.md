@@ -1,4 +1,5 @@
 # PHP Challenge
+****************
 
 # Team's members :
 ### 💻Adrien
@@ -6,13 +7,11 @@
 ### 💻Zakaria
 ### 💻Loïc
 
-# Projet: 
-## COGIP
+# Projet: COGIP
 
 # Mission :
 ### We will evaluate your project based on:
-
-Use of different URL parameters and filename
+#### Use of different URL parameters and filename
 Use of sanitization to avoid SQL injections
 Validation of data
 Construction of a functional relational database
@@ -26,3 +25,6 @@ Use an MVC structure
 Use a router
 Setup a session
 Allow access to certain page in regards to permissions
+
+
+# Resources : 
