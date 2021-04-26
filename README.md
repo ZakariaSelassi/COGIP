@@ -140,7 +140,7 @@ This page will display the following informations:
 
 ### Informations
 
-Make it so the parameter in the URL**; are not the same as the name of the PHP file.
+Make it so the parameter in the URL are not the same as the name of the PHP file.
 
 For example: imagine a website with an URL to modify a recipe which would be recettes.com/?modifplat=17 but which would actually call a file named updaterecipe.php.
 
