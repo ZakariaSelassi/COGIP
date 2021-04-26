@@ -1,4 +1,4 @@
-PHP Challenge
+# PHP Challenge
 
 # Team's members :
 ### 💻Adrien
@@ -6,7 +6,7 @@ PHP Challenge
 ### 💻Zakaria
 ### 💻Loïc
 
-# Projet: COGIP
+# Projet's name: COGIP
 
 # Mission :
 ### We will evaluate your project based on:
