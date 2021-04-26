@@ -180,3 +180,6 @@ NOTE: It is imperative however that the slogan of the COGIP (vive la COGIP!) be 
 # Ressources : 
 * <a href="https://www.ovh.com/be">OVH</a>
 
+/dossier_images/nom_de_mon_image.jpg
+
+/htdocs/COGIP/cogipTable.jpg
