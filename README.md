@@ -26,7 +26,7 @@
 * Allow access to certain page in regards to permissions
 
 # Mission:
-The COGIP is a company which we don't know an all lot about apart that they produce Jean-Michel toys and that they are serious workers check. They also have incredible employees within their rank.
+The COGIP is a company which we don't know an all lot about apart that they produce <a href="https://www.dailymotion.com/video/x3a51">Jean-Michel toys</a> and that they are serious workers check. They also have incredible employees within their rank.
 
 Jean-Christian Ranu works in accounting at the COGIP. He has been using an old, ugly and incomplete software for years, making him go between it and excels sheet. Jean-Christian like paella, crosswords and his coworker Muriel Perrache.
 
