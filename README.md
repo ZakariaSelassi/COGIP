@@ -182,4 +182,4 @@ NOTE: It is imperative however that the slogan of the COGIP (vive la COGIP!) be 
 
 /dossier_images/nom_de_mon_image.jpg
 
-![Image text](/htdocs/COGIP/cogipTable.jpg)
+![Image text](/COGIP/cogipTable.jpg)
