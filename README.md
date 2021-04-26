@@ -1,5 +1,7 @@
 # 🔑🔑🔑 PHP Challenge 🔑🔑🔑
 
+![Gif](https://media.giphy.com/media/Y4ak9Ki2GZCbJxAnJD/giphy.gif)
+
 # Team's members :
 * 💻<a href="https://github.com/HanLoi">Loïc</a>
 * 💻<a href="https://github.com/Nadja-BeCode">Nadja</a>
@@ -154,7 +156,7 @@ With the help of button there should also be quick access to:
 - New invoice
 - New contact
 - New company
-- 
+
 There must also be a custom message on the welcome page depending if Muriel or Jean-christian is connected.
 
 If the user *as god mode* access (by default: Jean-Christian as it, his password is his last name) he will also have access to a button to manage the users. This button will lead him to a dashboard showing the members (users who have an access to the application), their access right and the power to modify them.
