@@ -1,4 +1,4 @@
-# *** PHP Challenge ***
+# 🔑🔑🔑 PHP Challenge 🔑🔑🔑
 
 # Team's members :
 * 💻<a href="https://github.com/HanLoi">Loïc</a>
@@ -119,7 +119,7 @@ This page will display the following informations:
 - Company linked to the invoice
 - Type of company linked the invoice (provider or client)
 - Contact linked to the invoice
-- 
+
 ### Contact details page
 
 This page will display the following informations:
@@ -131,7 +131,7 @@ This page will display the following informations:
 
 ## Administration part for Ranu
 
-###Informations
+### Informations
 
 Make it so the parameter in the URL**; are not the same as the name of the PHP file.
 
