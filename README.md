@@ -175,6 +175,6 @@ NOTE: It is imperative however that the slogan of the COGIP (vive la COGIP!) be 
 
 
 
-# Resources : 
+# Ressources : 
 * <a href="https://www.ovh.com/be">OVH</a>
 
