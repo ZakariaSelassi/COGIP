@@ -18,10 +18,7 @@
     </div>   
 </nav>
 <div class="p-5 m-auto w-50">
-    <div>
-        <p>Bonjour !</p>
-    </div>
-    <p>Last invoice :</p>
+    <h1>COGIP : list of invoices</h1>
     <table class="table">
     <thead>
         <tr>
@@ -33,72 +30,15 @@
         </tr>
     </thead>
     <?php 
-    foreach($params['req2'] as $req)
+    foreach($params['req'] as $req)
     {?>
         <tbody>
             <tr>
-                <td><?= $req['id_invoices'] ?></td>
+                <td><a href="/home/invoices/details"><?= $req['id_invoices'] ?></a></td>
                 <td scope="row"><?= htmlspecialchars($req['num_invoices']) ?></td>
                 <td><?= $req['date_invoices'] ?></td>
                 <td><?= $req['name_company'] ?></td>
                 <td><?= $req['type'] ?></td>
-            </tr>
-        </tbody>
-    <?php
-    }
-    ?>
-    </table>
-
-    <p>Last companies :</p>
-    <table class="table">
-    <thead>
-        <tr>
-        <th>Number</th>
-        <th scope="col">name</th>
-        <th scope="col">TVA</th>
-        <th scope="col">Country</th>
-        <th scope="col">Type</th>
-        </tr>
-    </thead>
-    <?php 
-    foreach($params['req'] as $companies)
-    {?>
-        <tbody>
-            <tr>
-                <td><?= $companies['id_compagnies'] ?></td>
-                <td scope="row"><?= htmlspecialchars($companies['name_company']) ?></td>
-                <td><?= $companies['country_company'] ?></td>
-                <td><?= $companies['vat_company'] ?></td>
-                <td><?= $companies['type'] ?></td>
-            </tr>
-        </tbody>
-    <?php
-    }
-    ?>
-    </table>
-
-
-    <p>Last contact :</p>
-    <table class="table">
-    <thead>
-        <tr>
-        <th>Number</th>
-        <th scope="col">Name</th>
-        <th scope="col">Telephone</th>
-        <th scope="col">Email</th>
-        <th scope="col">Company</th>
-        </tr>
-    </thead>
-    <?php 
-    foreach($params['req'] as $contact)
-    {?>
-        <tbody>
-            <tr>
-                <td><?= $contact['id_compagnies'] ?></td>
-                <td scope="row"><?= htmlspecialchars($contact['Name']) ?></td>
-                <td><?= $contact['telephone'] ?></td>
-                <td><?= $contact['email'] ?></td>
-                <td><?= $contact['name_company'] ?></td>
             </tr>
         </tbody>
     <?php

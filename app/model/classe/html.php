@@ -35,7 +35,10 @@ class Html {
             <td>".$data['telephone']."</td>
             <td>".$data['email']."</td>
             <td>".$data['name_company']."</td>
-            <td><a href =".$data['id_people']."\">Supprimer</a></td>
+            <td>
+            <a href =\"/home/contactDelete/".$data['id_people']."\">Supprimer</a>
+            <a href=\"/home/contactDetail/".$data['id_people']."\" name=\"details\" class=\"btn btn-warning\">Detail</a>
+            </td>
         </tr>");
         }
         return "
@@ -48,4 +51,33 @@ class Html {
         </tr>
         </br>".implode("",$optionArray)."</tr>\n</table>";
     }
+
+    public function displayContactDetailPeople($pull){
+       
+        $data = $pull->fetch();
+        return "
+        <p>Contact : ".$data['Name']."</p>
+        <p>Company : ".$data['name_company']."</p>
+        <p>Email : ".$data['email']."</p>
+        <p>Phone : ".$data['telephone']."</p>";
+    }
+
+    public function displayContactDetailInvoices($pull, $class){
+        $optionArray= [];
+        while ($data = $pull->fetch()){ 
+            array_push($optionArray,"<tr>
+            <td>".$data['num_invoices']."</td>
+            <td>".$data['date_invoices']."</td>
+        </tr>");
+        }
+        return "
+        <table class='$class'>
+        <tr>
+            <td>Invoice number</td>
+            <td>Date</td>
+        </tr>
+        </br>".implode("",$optionArray)."</tr>\n</table>";
+    }
+
+
 }

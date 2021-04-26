@@ -7,12 +7,27 @@ define('VIEWS', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEP
 define('SCRIPTS', dirname($_SERVER['SCRIPT_NAME']) . DIRECTORY_SEPARATOR);
 
 $router = new Router($_GET['url']);
-// get url 
+/** Invoices */
+$router->get('/home', 'App\Controllers\InvoiceController@allDetails');
+$router->get('/home/invoices',  'App\Controllers\InvoiceController@allInvoice');
+$router->get('/home/admin',  'App\Controllers\InvoiceController@adminDetails');
+$router->get('/home/admin/newInvoices', 'App\Controllers\InvoiceController@creatInvoice');
+$router->post('/home/admin/newInvoices', 'App\Controllers\InvoiceController@sendSubmit');
+/** Contact */
+$router->get('/home/listContact', 'App\controllers\ContactController@getContact');
+$router->get('/home/newContact', 'App\controllers\ContactController@createContact');
+$router->post('/home/newContact', 'App\controllers\ContactController@sendSubmitAdd');
+$router->get('/home/contactDetail/:id', 'App\controllers\ContactController@getContactDetails');
+$router->get('/home/contactDelete/:id', 'App\controllers\ContactController@contactDelete');
+$router->get('/home/contactEdit/:id', 'App\controllers\ContactController@editContact');
+$router->post('/home/contactEdit/:id', 'App\controllers\ContactController@sendSubmitEdit');
+/****Line en dessous a modifier pour ajouter contact personne + companies */
+$router->get('/home/invoices/details/', 'App\Controllers\InvoiceController@companyNames');
 
-$router->get('/', 'App\controllers\InvoiceController@getInvoice');
-$router->get('/register', 'App\controllers\InvoiceController@creatInvoice');
-$router->post('/register' ,'App\controllers\InvoiceController@displayInvoice');
-$router->get('/delete/:id','App\controllers\InvoiceController@delete');
-// Verifi les differents route
+/** Companies */    
+$router->get('/home/companies',  'App\Controllers\CompaniesController@allCompanies');
+$router->get('/home/admin',  'App\Controllers\CompaniesController@adminDetails');
+$router->get('/home/admin/newCompanies', 'App\Controllers\CompaniesController@creatCompanies');
+$router->post('/home/admin/newCompanies', 'App\Controllers\CompaniesController@sendSubmit');
 $router->run();
 ?>

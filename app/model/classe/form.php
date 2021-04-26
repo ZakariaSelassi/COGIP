@@ -1,6 +1,7 @@
 <?php
-namespace App\model\class;
+namespace App\model\classe;
 use App\model\Invoice;
+use App\model\Contact;
 class Form {
 
     private $data;
@@ -32,8 +33,8 @@ class Form {
         return "<p><label for='$for'>".$text."</label></p>";
     }
 
-    public function inputType($type, $name){
-        return "<p><input type='$type' name='$name'></p>";
+    public function inputType($type, $name, $placeholder="Default"){
+        return "<p><input type='$type' name='$name' placeholder='$placeholder'></p>";
     }
 
     public function radio($name, $value) {
@@ -41,20 +42,20 @@ class Form {
     }
 
     public function time($name){
-        return "<input type='time' name='$name' value=''>";
+        return "<input type='time' name='$name' value='' >";
     }
-    public function select($text,$pull,$name1,$name2){
+    public function select($name,$pull,$nameValue,$name2){
         $optionArray= [];
         
         foreach($pull as $value){ 
             array_push(
-            $optionArray,"<option value='".$value[$name1]."'>
+            $optionArray,"<option value='".$value[$nameValue]."'>
             ".$value[$name2]."</option>");
         }
-        return "<p>\n<select name='$text'>".implode(",",$optionArray)."</select>\n</p>\n";
+        return "<p>\n<select name='$name'>".implode(",",$optionArray)."</select>\n</p>\n";
     }
-    public function submit($modifier){
-        return '<div><button type="submit" name="submit" class="btn btn-primary mt-1" >'.$modifier.'</button></div>';
+    public function submit($text){
+        return '<div><button type="submit" name="submit" class="btn btn-primary mt-1" >'.$text.'</button></div>';
     }
 }
 

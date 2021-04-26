@@ -2,7 +2,7 @@
 
     <div class="m-auto w-50">
     <h1 class="m-auto w-50">Invoices</h1>
-    <p>list of invoices :</p>
+    <p class="m-auto w-50">list of invoices :</p>
     <table class="table">
     <thead>
         <tr>
@@ -23,12 +23,16 @@
                 <td><?= $req['date_invoices'] ?></td>
                 <td><?= $req['name_company'] ?></td>
                 <td><?= $req['type'] ?></td>
-                <td><button type="submit" name="delete"><a href="/delete/<?=$req['id_invoices']?>">Delete</a></button></td>
+                <td>
+                    <a href="" name="edit" class="btn btn-warning">Edit</a>
+                    <a href="/deleteInvoice/<?= $req['id_invoices']?>" name="delete" class="btn btn-danger">Delete</a>
+               </td>
             </tr>
         </tbody>
     <?php
     }
     ?>
     </table>
-    <a href="register">ADD</a>
+    <div>
+    <a href="/register">ADD</a>
     </div>

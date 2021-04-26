@@ -1,5 +1,4 @@
-
-<?php $title = 'home'; ?>
+<?php $title = 'Invoices'; ?>
 <nav class="menum navbar navbar-light navbar-expand-md justify-content-center fixed-top">
     <div class="container">
         <div class="navbar-collapse collapse justify-content-between align-items-center w-100" id="collapsingNavbar2">
@@ -18,22 +17,26 @@
     </div>   
 </nav>
 <div class="p-5 m-auto w-50">
-    <div>
-        <p>Bonjour !</p>
-    </div>
-    <p>Last invoice :</p>
-    <table class="table">
-    <thead>
-        <tr>
-        <th>number</th>
-        <th scope="col">Invoice Number</th>
-        <th scope="col">Date</th>
-        <th scope="col">Compagnies</th>
-        <th scope="col">Type</th>
-        </tr>
-    </thead>
+        <div>   
+            <a href="/home/admin/newInvoices">ADD New Invoices</a>
+            <a href="/home/admin/newCompanies">ADD New Contacts</a>
+            <a href="/home/admin/newCompanies">ADD New Company</a>
+        </div>
+    <p class="m-auto w-50">list of invoices :</p>
+        <table class="table">
+            <thead>
+                <tr>
+                <th>number</th>
+                <th scope="col">Invoice Number</th>
+                <th scope="col">Date</th>
+                <th scope="col">Compagnies</th>
+                <th scope="col">Type</th>
+                <th scope="col">action</th>
+
+                </tr>
+            </thead>
     <?php 
-    foreach($params['req2'] as $req)
+    foreach($params['req'] as $req)
     {?>
         <tbody>
             <tr>
@@ -42,18 +45,22 @@
                 <td><?= $req['date_invoices'] ?></td>
                 <td><?= $req['name_company'] ?></td>
                 <td><?= $req['type'] ?></td>
+                <td>
+                    <a href="/deleteInvoice/<?= $req['id_invoices']?>" name="delete" class="btn btn-danger">Delete</a>
+               </td>
             </tr>
         </tbody>
     <?php
     }
     ?>
     </table>
-
+<div>
+    <div class="p-5 m-auto w-50">
     <p>Last companies :</p>
     <table class="table">
     <thead>
         <tr>
-        <th>Number</th>
+        <th>number</th>
         <th scope="col">name</th>
         <th scope="col">TVA</th>
         <th scope="col">Country</th>
@@ -61,7 +68,7 @@
         </tr>
     </thead>
     <?php 
-    foreach($params['req'] as $companies)
+    foreach($params['req2'] as $companies)
     {?>
         <tbody>
             <tr>
@@ -70,39 +77,12 @@
                 <td><?= $companies['country_company'] ?></td>
                 <td><?= $companies['vat_company'] ?></td>
                 <td><?= $companies['type'] ?></td>
+                <td>
+                    <a href="/deleteCompany/<?= $companies['id_compagnies']?>" name="delete" class="btn btn-danger">Delete</a>
+               </td>
             </tr>
         </tbody>
     <?php
     }
     ?>
     </table>
-
-
-    <p>Last contact :</p>
-    <table class="table">
-    <thead>
-        <tr>
-        <th>Number</th>
-        <th scope="col">Name</th>
-        <th scope="col">Telephone</th>
-        <th scope="col">Email</th>
-        <th scope="col">Company</th>
-        </tr>
-    </thead>
-    <?php 
-    foreach($params['req'] as $contact)
-    {?>
-        <tbody>
-            <tr>
-                <td><?= $contact['id_compagnies'] ?></td>
-                <td scope="row"><?= htmlspecialchars($contact['Name']) ?></td>
-                <td><?= $contact['telephone'] ?></td>
-                <td><?= $contact['email'] ?></td>
-                <td><?= $contact['name_company'] ?></td>
-            </tr>
-        </tbody>
-    <?php
-    }
-    ?>
-    </table>
-    <div>
