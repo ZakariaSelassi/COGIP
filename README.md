@@ -66,91 +66,107 @@ For the type of company:
 The type (either client or provider)
 NOTE: For clarity sake, a company of type client would buy something from the COGIP, we'll send them an invoice, while a provider company is one the COGIP buys stuff from (products or services).
 
-Relations
+#### Relations
 The relations between the table would be as follow:
 
-Company --- type
-Company --- invoice
-People --- invoice
-People --- company
-The application
-Welcome page
-The welcome page should display:
+* Company --- type
+* Company --- invoice
+* People --- invoice
+* People --- company
 
-A welcome message for Jean-Christian Ranu (if logged in)
-The list of the last 5 invoices, ordered by date
-The list of the last 5 people encoded in the database
-The list of the last 5 companies encoded in the database
-A link to the providers page
-A link to the client page
-Companies page
+###  The application
+
+#### Welcome page
+
+### The welcome page should display:
+
+- A welcome message for Jean-Christian Ranu (if logged in)
+- The list of the last 5 invoices, ordered by date
+- The list of the last 5 people encoded in the database
+- The list of the last 5 companies encoded in the database
+- A link to the providers page
+- A link to the client page
+
+### Companies page
 This page will display a list of all companies in alphabetical order. The name of the company will be a link to a new page detailing the company, the content will be generated with the ID of the chosen company.
 
-Invoices page
+### Invoices page
 This page will display a list of all the invoices from the most recent to the oldest. Each invoice number will be a link to a new page detailing the invoice, the content will be generated with the ID of the chosen invoice.
 
-Contacts page
+### Contacts page
 This page will display a list of all the contacts in alphabetical order. Each contact name will be a link to a new page detailing the contact, the content will be generated with the ID of the chosen contact.
 
-Providers page
+### Providers page
 This page will display a list of all providers in alphabetical order. The name of the provider will be a link to a new page detailing the provider, the content will be generated with the ID of the chosen provider. (same detailing page as for companies)
 
-Clients page
+### Clients page
 This page will display a list of all the clients in alphabetical order. Each client name will be a link to a new page detailing the contact, the content will be generated with the ID of the chosen contact. (same detailing page as for contacts)
 
-Company details page
+### Company details page
 This page will display the following informations:
 
-Name of the company
-VAT number of the company
-List of invoices linked to the company
-List of contacts working for the company
-Invoice details page
+- Name of the company
+- VAT number of the company
+- List of invoices linked to the company
+- List of contacts working for the company
+
+### Invoice details page
+
 This page will display the following informations:
 
-Number
-Date
-Company linked to the invoice
-Type of company linked the invoice (provider or client)
-Contact linked to the invoice
-Contact details page
+- Number
+- Date
+- Company linked to the invoice
+- Type of company linked the invoice (provider or client)
+- Contact linked to the invoice
+- 
+### Contact details page
+
 This page will display the following informations:
 
-First and last name
-Email
-Name of the company where the person works
-The list of all invoices linked to that person
-Administration part for Ranu
-Informations
-Make it so the parameter in the URL are not the same as the name of the PHP file.
+- First and last name
+- Email
+- Name of the company where the person works
+- The list of all invoices linked to that person
+
+## Administration part for Ranu
+
+###Informations
+
+Make it so the parameter in the URL**; are not the same as the name of the PHP file.
 
 For example: imagine a website with an URL to modify a recipe which would be recettes.com/?modifplat=17 but which would actually call a file named updaterecipe.php.
 
-What does Ranu need ?
+### What does Ranu need ?
+
 Once you have done the consultation part of the accounting database for Jean-Christian, you will have to create an interface of administration from which he'll be able to input, modify and delete data.
 
 He will need a dashboard in which he will have a direct access to the:
 
-Five last invoices (number invoice, date, company), by clicking the invoice number or the company, he will be able to edit them.
-Five last companies (company name, its type), by clicking the invoice the company name, he will be able to edit them.
-Five last contact (first and last name, email, company name), by clicking the contact name, the invoice number or the company name, he will be able to edit them.
+- Five last invoices (number invoice, date, company), by clicking the invoice number or the company, he will be able to edit them.
+- Five last companies (company name, its type), by clicking the invoice the company name, he will be able to edit them.
+- Five last contact (first and last name, email, company name), by clicking the contact name, the invoice number or the company name, he will be able to edit them.
+
 On the same line as each element there should also be an bin icon to delete it.
 
 With the help of button there should also be quick access to:
 
-New invoice
-New contact
-New company
+- New invoice
+- New contact
+- New company
+- 
 There must also be a custom message on the welcome page depending if Muriel or Jean-christian is connected.
 
-If the user as god mode access (by default: Jean-Christian as it, his password is his last name) he will also have access to a button to manage the users. This button will lead him to a dashboard showing the members (users who have an access to the application), their access right and the power to modify them.
+If the user *as god mode* access (by default: Jean-Christian as it, his password is his last name) he will also have access to a button to manage the users. This button will lead him to a dashboard showing the members (users who have an access to the application), their access right and the power to modify them.
 
 If the user as moderator access (by default: Muriel, her password is her last name) he will have access to the admin dashboard, he can add invoices, companies and people but can't either modify or delete elements from the database.
 
-Still unclear ?
-This link file resumes (with an ugly design) the pages and what they should contain.
+## Still unclear ?
 
-Optional
+This <a href="https://github.com/becodeorg/CRL-Woods-4.27/blob/main/LearningPath/03.The-Mountain/09.PHP/PHP-Challenge/cogip/mockup.md">link</a> file resumes (with an ugly design) the pages and what they should contain.
+
+## Optional
+
 Realise a nice and modern design for our friend Jean-Christian. Let's not forget that he as been in accounting at the COGIP for more than 20 years! It's high time to change his habits and make him enter the 21st century.
 
 NOTE: It is imperative however that the slogan of the COGIP (vive la COGIP!) be in the footer.
