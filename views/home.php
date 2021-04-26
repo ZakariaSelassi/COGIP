@@ -24,7 +24,7 @@
               </nav>
 
 
-<?php $content = ob_get_clean(); ?>
+<?php $navbar = ob_get_clean(); ?>
 
 <?php require('template.php');?> 
 
