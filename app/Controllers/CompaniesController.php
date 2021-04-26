@@ -31,6 +31,13 @@ class CompaniesController extends Controller
         }
     }
 
+    public function deleteCompany($id)
+    {
+        $delete = new Companies();
+        $delete->deleteCompany($id);
+        return header('Location: /home/company');
+    }
+
 
 }
     

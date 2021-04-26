@@ -29,8 +29,10 @@ class Invoice extends Database{
     public function lastContact()
     {
         $bd = $this->connect();
-        $req = $bd->query('SELECT id_people, CONCAT(first_name, " ",last_name) AS "Name", telephone, email, compagnies.name_company, compagnies.id_compagnies FROM People INNER JOIN compagnies on people.id_compagnies = compagnies.id_compagnies ORDER BY id_people DESC LIMIT 5');
-        return $req;
+        $req = $bd->prepare('SELECT id_people, CONCAT(first_name, " ",last_name) AS "Name", telephone, email, compagnies.name_company, compagnies.id_compagnies FROM People INNER JOIN compagnies on people.id_compagnies = compagnies.id_compagnies LIMIT 0,5');
+        $req->execute();
+        $resultat = $req->fetchAll();
+        return $resultat;
     }
 
     public function lastInvoice()
@@ -75,7 +77,13 @@ class Invoice extends Database{
                 echo $stmt -> rowCount();
                 echo "New invoices as been register !";}
                 return  $stmt;  
-        }
-           
+        }   
+    }
+
+    public function deleteInvoices(int $id){
+        $bdd = $this->connect();
+        $requete = "DELETE FROM `invoices` WHERE id_invoices = $id";
+        $resultat = $bdd->prepare($requete);
+        return $resultat->execute();
     }
 }

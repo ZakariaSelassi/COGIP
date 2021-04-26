@@ -19,8 +19,13 @@
 </nav>
 <div class="p-5 m-auto w-50">
     <h1>COGIP : companies</h1>
-    <p>Last companies :</p>
-    <table class="table">
+    <?php
+
+    require ('../app/model/classe/html.php');
+    $table = new Html();
+    print $table->displayCompany($params['req'],"tableCompany");
+
+    /*<table class="table">
     <thead>
         <tr>
         <th>number</th>
@@ -45,5 +50,6 @@
     <?php
     }
     ?>
-    </table>
+    </table>*/
+    ?>
     <div>

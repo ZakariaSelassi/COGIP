@@ -9,7 +9,7 @@
                     </li>
                 <li class="nav-item"> <a class="nav-link" href="/home/invoices">Invoices</a></li>
                 <li class="nav-item"> <a class="nav-link" href="/home/companies">Companies</a> 
-                <li class="nav-item"> <a class="nav-link" href="/home/contact">Contact</a> 
+                <li class="nav-item"> <a class="nav-link" href="/home/listContact">Contact</a> 
                 <li class="nav-item"> <a class="nav-link" href="/home/admin">Admin(test)</a> 
                 <li class="nav-item"> <a class="nav-link" href="/home/connexion">Connexion</a>  
                 </li>
@@ -90,7 +90,7 @@
         </tr>
     </thead>
     <?php 
-    foreach($params['req'] as $contact)
+    foreach($params['req3'] as $contact)
     {?>
         <tbody>
             <tr>

@@ -19,7 +19,15 @@
 </nav>
 <div class="p-5 m-auto w-50">
     <h1>COGIP : list of invoices</h1>
-    <table class="table">
+
+    
+    <?php 
+    require ('../app/model/classe/html.php');
+    $table = new Html();
+    print $table->displayInvoices($params['req'],"tableInvoice");
+
+    
+    /*<table class="table">
     <thead>
         <tr>
         <th>number</th>
@@ -44,5 +52,6 @@
     <?php
     }
     ?>
-    </table>
+    </table>*/
+    ?>
     <div>

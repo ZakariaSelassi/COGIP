@@ -1,3 +1,4 @@
+<?php require ('../app/model/classe/html.php')?>
 <?php $title = 'Invoices'; ?>
 <nav class="menum navbar navbar-light navbar-expand-md justify-content-center fixed-top">
     <div class="container">
@@ -16,7 +17,17 @@
         </div>
     </div>   
 </nav>
-<div class="p-5 m-auto w-50">
+<?php
+
+
+    $html = new Html();
+    print $html->displayCompanyAdmin($params('req'),"company");
+    print $html->displayInvoicesAdmin($params('req2'),"Invoices");
+    print $html->displayTableContactAdmin($params('req3'),"Contact");
+
+
+
+/*<div class="p-5 m-auto w-50">
         <div>   
             <a href="/home/admin/newInvoices">ADD New Invoices</a>
             <a href="/home/admin/newCompanies">ADD New Contacts</a>
@@ -85,4 +96,5 @@
     <?php
     }
     ?>
-    </table>
+    </table>*/
+    ?>
