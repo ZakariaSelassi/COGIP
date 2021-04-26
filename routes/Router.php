@@ -1,19 +1,18 @@
-<?php 
+<?php
+
 namespace Router;
 
-use function PHPSTORM_META\map;
+use App\Exceptions\NotFoundException;
 
-class Router
-{
+class Router {
+
     public $url;
-    public $routes = []; // pour stocker toutes les routes
+    public $routes = [];
 
     public function __construct($url)
     {
         $this->url = trim($url, '/');
     }
-
-
 
     public function get(string $path, string $action)
     {
@@ -27,13 +26,12 @@ class Router
 
     public function run()
     {
-        // on peut savoir comme ca dynamiquement si c est en post ou get
         foreach ($this->routes[$_SERVER['REQUEST_METHOD']] as $route) {
             if ($route->matches($this->url)) {
                 return $route->execute();
             }
         }
 
-        echo '404';
+        echo "La page demandée est introuvable.";
     }
 }

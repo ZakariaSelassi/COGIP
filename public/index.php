@@ -8,6 +8,7 @@ define('SCRIPTS', dirname($_SERVER['SCRIPT_NAME']) . DIRECTORY_SEPARATOR);
 
 $router = new Router($_GET['url']);
 /** Invoices */
+$router->get('', 'App\Controllers\InvoiceController@allDetails');
 $router->get('/home', 'App\Controllers\InvoiceController@allDetails');
 $router->get('/home/invoices',  'App\Controllers\InvoiceController@allInvoice');
 $router->get('/home/admin',  'App\Controllers\InvoiceController@adminDetails');
