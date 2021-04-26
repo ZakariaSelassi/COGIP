@@ -26,6 +26,13 @@ class Invoice extends Database{
         $resultat = $req->fetchAll();
         return $resultat;
     }
+    public function lastContact()
+    {
+        $bd = $this->connect();
+        $req = $bd->query('SELECT id_people, CONCAT(first_name, " ",last_name) AS "Name", telephone, email, compagnies.name_company, compagnies.id_compagnies FROM People INNER JOIN compagnies on people.id_compagnies = compagnies.id_compagnies ORDER BY id_people DESC LIMIT 5');
+        return $req;
+    }
+
     public function lastInvoice()
     {
         $bd = $this->connect();

@@ -19,7 +19,8 @@ class InvoiceController extends Controller
         $invoice = new Invoice();
         $req = $invoice->lastCompanies();
         $req2 = $invoice->lastInvoice();
-        return $this->view('home', compact('req', 'req2'));
+        $req3 = $invoice->lastContact();
+        return $this->view('home', compact('req', 'req2','req3'));
     }
     // Affiche toutes les factures sur invoices
     public function allInvoice()

@@ -50,29 +50,36 @@ class Contact extends Database{
             $last_name= $_POST['lastName'];
             $telephone = $_POST['telephone'];
             $email = $_POST['email'];
-            $company = $_POST['companies'];
+            $company =(int)$_POST['companies'];
             var_dump($company);
             $bd = $this->connect();
-            $sql = "INSERT INTO people (first_name,last_name,email,telephone,id_compagnies) values (:first_name,:last_name,:email,:telehpone,:id_compagnies)";
+            $sql = "INSERT INTO people (first_name,last_name,email,telephone,id_compagnies) values (?,?,?,?,?)";
             $stmt = $bd->prepare($sql);
-            $stmt -> bindParam(":first_name",$first_name);
+            $stmt->bindValue(1, $first_name);
+            $stmt->bindValue(2, $last_name);
+            $stmt->bindValue(3, $email);
+            $stmt->bindValue(4, $telephone);
+            $stmt->bindValue(5, $company);
+            /*$stmt -> bindParam(":first_name",$first_name);
             $stmt -> bindParam(":last_name",$last_name);
             $stmt -> bindParam(":email",$email);
             $stmt -> bindParam(":telephone",$telephone);
-            $stmt -> bindParam(":id_compagnies",$company);
+            $stmt -> bindParam(":id_compagnies",$company);*/
           
             if(!$stmt)
             { 
                 echo 'error';
             }else
             {   
-                $stmt->execute([
+                /*$stmt->execute([
                     'first_name' => $first_name,
                     'last_name' => $last_name,
                     'telephone' => $telephone,
                     'email' => $email,
                     'id_compagnies' => $company
-                ]);
+                ]);*/
+
+                $stmt->execute();
                 
                 echo $stmt -> rowCount();
                 echo "New clients as been register !";
@@ -122,6 +129,17 @@ class Contact extends Database{
         }
        
     }
+
+    public function listContactHome()
+    {
+        $bd = $this->connect();
+        $req = $bd->query('SELECT id_people, CONCAT(first_name, " ",last_name) AS "Name", telephone, email, compagnies.name_company, compagnies.id_compagnies FROM People INNER JOIN compagnies on people.id_compagnies = compagnies.id_compagnies ORDER BY id_people DESC LIMIT 5');
+        return $req;
+    }
+
+
+
+
 }
 
 

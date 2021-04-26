@@ -76,4 +76,33 @@
     }
     ?>
     </table>
+
+
+    <p>Last contact :</p>
+    <table class="table">
+    <thead>
+        <tr>
+        <th>Number</th>
+        <th scope="col">Name</th>
+        <th scope="col">Telephone</th>
+        <th scope="col">Email</th>
+        <th scope="col">Company</th>
+        </tr>
+    </thead>
+    <?php 
+    foreach($params['req'] as $contact)
+    {?>
+        <tbody>
+            <tr>
+                <td><?= $contact['id_compagnies'] ?></td>
+                <td scope="row"><?= htmlspecialchars($contact['Name']) ?></td>
+                <td><?= $contact['telephone'] ?></td>
+                <td><?= $contact['email'] ?></td>
+                <td><?= $contact['name_company'] ?></td>
+            </tr>
+        </tbody>
+    <?php
+    }
+    ?>
+    </table>
     <div>
