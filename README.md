@@ -48,14 +48,9 @@ NOTE: Don't forget to add an SQL file containing the structure in the repository
 * Communication is important! Between the members of the group, with the client and even with other member of your startup.
 
 <details close>
- ```diff
-- red
-+ green
-! orange
 
-```
 ! ### <summary> Instructions </summary>
-```
+
 ### Data needed by Jean-Christian 
 
 #### Tables
