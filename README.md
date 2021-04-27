@@ -54,7 +54,7 @@ NOTE: Don't forget to add an SQL file containing the structure in the repository
 ! orange
 
 ```
-### !<summary> Instructions </summary>
+! ### <summary> Instructions </summary>
 ```
 ### Data needed by Jean-Christian 
 
