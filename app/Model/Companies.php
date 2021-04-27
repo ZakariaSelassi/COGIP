@@ -50,4 +50,11 @@ class Companies extends Database{
         }
            
     }
+
+    public function deleteInvoices(int $id){
+        $bdd = $this->connect();
+        $requete = "DELETE FROM `compagnies` WHERE id_compagnies = $id";
+        $resultat = $bdd->prepare($requete);
+        return $resultat->execute();
+    }
 }

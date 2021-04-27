@@ -35,11 +35,10 @@ class Contact extends Database{
         return $req;
     }
 
-    public function deleteContact(){
+    public function deleteContact(int $id){
         $bdd = $this->connect();
-        $requete = "DELETE FROM `people` WHERE id_people = :id";
+        $requete = "DELETE FROM `people` WHERE id_people = $id";
         $resultat = $bdd->prepare($requete);
-        $resultat->bindParam(':id',$id, PDO::PARAM_INT);
         return $resultat->execute();
     }
 
@@ -60,25 +59,12 @@ class Contact extends Database{
             $stmt->bindValue(3, $email);
             $stmt->bindValue(4, $telephone);
             $stmt->bindValue(5, $company);
-            /*$stmt -> bindParam(":first_name",$first_name);
-            $stmt -> bindParam(":last_name",$last_name);
-            $stmt -> bindParam(":email",$email);
-            $stmt -> bindParam(":telephone",$telephone);
-            $stmt -> bindParam(":id_compagnies",$company);*/
           
             if(!$stmt)
             { 
                 echo 'error';
             }else
-            {   
-                /*$stmt->execute([
-                    'first_name' => $first_name,
-                    'last_name' => $last_name,
-                    'telephone' => $telephone,
-                    'email' => $email,
-                    'id_compagnies' => $company
-                ]);*/
-
+            {  
                 $stmt->execute();
                 
                 echo $stmt -> rowCount();
@@ -89,46 +75,6 @@ class Contact extends Database{
            
     }
 
-
-    public function editContact(){
-        if(isset($_POST['submit'])){
-            $bd = $this->connect();
-            $first_name = $_POST['firstName'];
-            $last_name= $_POST['lastName'];
-            $telephone = $_POST['telephone'];
-            $email = $_POST['email'];
-            $company = $_POST['company'];
-            $id = $_POST['id'];
-            $sql = "UPDATE people SET 'first_name' = :first_name, 'last_name' = :last_name, 'telephone' = :telephone, 'email' = :email, company = :company WHERE 'id_people' = :id";
-            $stmt = $bd->prepare($sql);
-            $stmt -> bindParam(":first_name",$first_name);
-            $stmt -> bindParam(":last_name",$last_name);
-            $stmt -> bindParam(":telephone",$telephone);
-            $stmt -> bindParam(":email",$email);
-            $stmt -> bindParam(":id_compagnies",$company);
-            $stmt -> bindParam(":id",$id);
-            
-            if(!$stmt)
-            { 
-                echo 'error';
-            }else
-            {   
-                $stmt->execute([
-                    'first_name' => $first_name,
-                    'last_name' => $last_name,
-                    'telephone' => $telephone,
-                    'email' => $email,
-                    'id_compagnies' => $company,
-                    'id' => $id
-                ]);
-                
-                echo $stmt -> rowCount();
-                echo "New clients as been register !";
-            }
-                return  $stmt;  
-        }
-       
-    }
 
     public function listContactHome()
     {

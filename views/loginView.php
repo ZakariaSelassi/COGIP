@@ -1,7 +1,6 @@
 
   <?php $title = 'login'; ?>
   <?php ob_start(); ?>
-    
 
   <div class="container" style="margin-top: 50px">
     <div class="row">
@@ -12,9 +11,11 @@
           <br />
           <form id="login-form" class="form" action="" method="post">
             <div class="form-group">
+              <label for="form-control">User :</label>
               <input type="text" class="form-control" placeholder="User">
             </div>
             <div class="form-group">
+              <label for="password-login">Password : </label>
               <input id="password-login" type="password" class="form-control" placeholder="Password">
             </div>
             <div class="form-group2 text-center">
@@ -28,7 +29,5 @@
     </div>
   </div>
 
-  <?php $content = ob_get_clean(); ?>
 
-  <?php require('template.php');?> 
 

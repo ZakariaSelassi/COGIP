@@ -90,7 +90,7 @@
         </tr>
     </thead>
     <?php 
-    foreach($params['req'] as $contact)
+    foreach($params['req3'] as $contact)
     {?>
         <tbody>
             <tr>

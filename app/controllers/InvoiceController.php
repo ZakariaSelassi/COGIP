@@ -58,4 +58,11 @@ class InvoiceController extends Controller
             }
         }
     }
+
+    public function deleteInvoices($id)
+    {
+        $delete = new Invoice();
+        $delete->deleteInvoices($id);
+        return header('Location: /home/invoices');
+    }
 }

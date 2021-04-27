@@ -41,8 +41,7 @@
             $edit = new Contact();
             $req = $edit->listContactDetailEdit($id);
             $data = $req->fetch();
-            $req2 = $edit->editContact();
-            return $this->view('Contact.contactEditView',compact('data','req2'));
+            return $this->view('Contact.contactEditView',compact('data'));
 
         }
 
@@ -50,27 +49,19 @@
         {
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $display = new Contact();
-                $req = $display->editContact();
+                $req = $display->editContact($_POST);
                 if ($req) {
-                    header('Location: /home/admin');
+                    header('Location: /home/listContact');
                 } else {
                     echo "Pas bon";
                 }
             }
         }
 
-        public function deleteContact(){
+        public function deleteContact($id){
             $delete = new Contact();
-            $req = $delete->listContact();
-            $delete->deleteContact();
-            if($req)
-            {
-               return header('Location: /listContact');
-            }
-            else{
-               return header('Location: /listContact');
-            }
-
+            $delete->deleteContact($id);
+            return header('Location: /home/listContact');
         }
 
         
