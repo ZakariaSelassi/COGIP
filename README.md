@@ -47,10 +47,15 @@ NOTE: Don't forget to add an SQL file containing the structure in the repository
 * You should all read the briefing, there are certainly informations you won't have picked on your own and if it's still unclear, ask the client (coaches). Understanding the vision of the client is also a big part of development.
 * Communication is important! Between the members of the group, with the client and even with other member of your startup.
 
-```diff
 <details close>
-- ### <summary> - Instructions </summary>
+ ```diff
+- red
++ green
+! orange
 
+```
+### !<summary> Instructions </summary>
+```
 ### Data needed by Jean-Christian 
 
 #### Tables
