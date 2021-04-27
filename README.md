@@ -7,7 +7,7 @@
  
 ![Gif](https://media.giphy.com/media/Y4ak9Ki2GZCbJxAnJD/giphy.gif)
 
-# Team's members :
+# Work team :
 * 💻<a href="https://github.com/HanLoi">Loïc</a>
 * 💻<a href="https://github.com/Nadja-BeCode">Nadja</a>
 * 💻<a href="https://github.com/ZakariaSelassi">Zakaria</a>
