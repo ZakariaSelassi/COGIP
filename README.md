@@ -48,8 +48,10 @@ NOTE: Don't forget to add an SQL file containing the structure in the repository
 * Communication is important! Between the members of the group, with the client and even with other member of your startup.
 ## Instructions
 
-### Data needed by Jean-Christian
+### <summary> Data needed by Jean-Christian </summary>
 
+
+<details close>
 #### Tables
 
 Some information must be into the database an *it is not negotiable*: the data relating to people, companies and invoices. All this divided into four tables.
@@ -80,6 +82,8 @@ The relations between the table would be as follow:
 * Company --- invoice
 * People --- invoice
 * People --- company
+* 
+</details>
 
 ###  The application
 
