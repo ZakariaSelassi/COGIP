@@ -1,26 +1,27 @@
-{ <<
-    << << < HEAD
-        "name": "calle/cogip", ===
-        === = <<
-        << << < HEAD "name": "hexit/cogip",
-        "authors": [{
+{
+<<<<<<< HEAD
+    "name": "hexit/cogip",
+    "authors": [
+        {
             "name": "Hannecart Loïc",
             "email": "76540590+HanLoi@users.noreply.github.com"
+            
+        }
+    ],
+=======
+    "name": "zsela/cogipbis",
+    "authors": [{
+        "name": "zakaria",
+        "email": "zakariaselassi@gmail.com"
+    }],
+>>>>>>> zakaria
+    "autoload": {
+        "psr-4": {
+            "Router\\": "routes/",
+            "App\\": "App/"
 
-        }], ===
-        === =
-        "name": "zsela/cogipbis", >>>
-        >>> > loïc "authors": [{
-            "name": "Adrien Callewaert",
-            "email": "callewaert_adrien@live.fr"
-        }], >>>
-        >>> > zakaria "autoload": {
-            "psr-4": {
-                "Router\\": "routes/",
-                "App\\": "App/"
+        }
 
-            }
-
-        },
-        "require": {}
+    },
+    "require": {}
 }
