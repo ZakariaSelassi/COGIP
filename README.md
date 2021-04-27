@@ -47,12 +47,11 @@ NOTE: Don't forget to add an SQL file containing the structure in the repository
 * You should all read the briefing, there are certainly informations you won't have picked on your own and if it's still unclear, ask the client (coaches). Understanding the vision of the client is also a big part of development.
 * Communication is important! Between the members of the group, with the client and even with other member of your startup.
 
-## <summary> Instructions
-
-### Data needed by Jean-Christian </summary>
-
-
 <details close>
+## <summary> Instructions </summary>
+
+### Data needed by Jean-Christian 
+
 #### Tables
 
 Some information must be into the database an *it is not negotiable*: the data relating to people, companies and invoices. All this divided into four tables.
@@ -83,8 +82,6 @@ The relations between the table would be as follow:
 * Company --- invoice
 * People --- invoice
 * People --- company
-* 
-</details>
 
 ###  The application
 
@@ -171,7 +168,9 @@ There must also be a custom message on the welcome page depending if Muriel or J
 
 If the user *as god mode* access (by default: Jean-Christian as it, his password is his last name) he will also have access to a button to manage the users. This button will lead him to a dashboard showing the members (users who have an access to the application), their access right and the power to modify them.
 
-If the user as moderator access (by default: Muriel, her password is her last name) he will have access to the admin dashboard, he can add invoices, companies and people but can't either modify or delete elements from the database. </summary>
+If the user as moderator access (by default: Muriel, her password is her last name) he will have access to the admin dashboard, he can add invoices, companies and people but can't either modify or delete elements from the database. 
+
+</details>
 
 ## Still unclear ?
 
