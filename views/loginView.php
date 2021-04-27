@@ -1,6 +1,5 @@
 
   <?php $title = 'login'; ?>
-  <?php ob_start(); ?>
 
   <div class="container" style="margin-top: 50px">
     <div class="row">
